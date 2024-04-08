@@ -1,0 +1,39 @@
+{
+    "students": [
+        {
+            "name": "Alvin",
+            "courses": [
+                {
+                    "title": "Human Computer Interaction (CSC212.1.SPRING2024ASE)",
+                    "course_id": "CSC212.1.SPRING2024ASE",
+                    "professor": "Y.Y",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Machine Vision (CSC249.1.SPRING2024ASE)",
+                    "course_id": "CSC249.1.SPRING2024ASE",
+                    "professor": "C.X",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Social Implications of Computing (CSC299W.1.SPRING2024ASE)",
+                    "course_id": "CSC299W.1.SPRING2024ASE",
+                    "professor": "J.L",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Video Game Development (CSC186.1.SPRING2024ASE)",
+                    "course_id": "CSC186.1.SPRING2024ASE",
+                    "professor": "T.P",
+                    "status": "Open",
+                    "info" : "More Info"
+                }
+                
+            ]
+        }
+        
+    ]
+}

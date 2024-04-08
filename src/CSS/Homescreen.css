@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    font-family: "Quicksand";
+    color:  #f1356d;
+  }
+.home-screen {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    font-family: 'Arial', sans-serif; 
+    height: 100%; 
+    font-size: 24px; 
+   
+  }
+  

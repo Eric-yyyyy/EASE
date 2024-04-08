@@ -1,0 +1,69 @@
+/* Modal.css */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure it's above other content */
+  }
+  
+  .modal {
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch child elements to full width */
+    max-width: 400px; /* Or any max-width you prefer */
+    width: 100%;
+  }
+  
+  .modal input,
+  .modal textarea,
+  .modal button {
+    margin-bottom: 10px; /* Space out elements */
+  }
+  
+  .modal button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Bootstrap primary color for example */
+    color: white;
+  }
+  
+  .modal button:hover {
+    background-color: #0056b3; /* Darken color on hover */
+  }
+  
+  .modal button.delete {
+    background-color: #dc3545; /* Bootstrap danger color for delete */
+  }
+  
+  .modal button.delete:hover {
+    background-color: #bd2130; /* Darken color on hover */
+  }
+  
+  .modal button.close {
+    background-color: #6c757d; /* Bootstrap secondary color for close */
+  }
+  
+  .modal button.close:hover {
+    background-color: #5a6268; /* Darken color on hover */
+  }
+  
+  /* Input and textarea styles */
+  .modal input,
+  .modal textarea {
+    border: 1px solid #ced4da; /* Bootstrap-like input border */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
