@@ -5,6 +5,7 @@ import MenuList from './components/MenuList';
 import HomeScreen from './components/Screens/HomeScreen';
 import CourseScreen from './components/Screens/CourseScreen';
 import CalendarScreen from './components/Screens/CalendarScreen';
+import ChatScreen from './components/Screens/ChatScreen';
 
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/" element={<HomeScreen />} /> 
             <Route exact path="/course" element={<CourseScreen />} />
             <Route exact path="/calendar" element={<CalendarScreen />} />
+            <Route exact path="/chat" element={<ChatScreen />} />
           </Routes>
         </main>
       </div>
