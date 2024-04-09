@@ -22,7 +22,7 @@ function App() {
           <MenuList />
         </aside>
         <main className="main">
-          <Routes> {/* Replace Switch with Routes */}
+          <Routes> 
             <Route exact path="/" element={<HomeScreen />} /> 
             <Route exact path="/course" element={<CourseScreen />} />
             <Route exact path="/calendar" element={<CalendarScreen />} />

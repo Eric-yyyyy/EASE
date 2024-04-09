@@ -1,7 +1,7 @@
 // Modal.js
 import React, { useState } from 'react';
 
-import '../CSS/Modal.css'; // Ensure you have the CSS file
+import '../CSS/Modal.css'; 
 
 
 const Modal = ({ onSave, onDelete, event, onClose }) => {

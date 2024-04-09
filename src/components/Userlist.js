@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 function ChatList({ activeContact, setActiveContact }) {
-    // No need for selectedContact state here as it's passed down from parent
+    
   
     const contacts = [
       { name: 'Jack', id: 1 },
