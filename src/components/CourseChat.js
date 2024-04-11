@@ -4,36 +4,42 @@ import '../CSS/Dmchat.css';
 function ChatServer({ contact }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const loggedInUser = JSON.parse(localStorage.getItem('user')); // Get the logged-in user
 
   useEffect(() => {
- 
     if (contact) {
-      const storedMessages = localStorage.getItem(`messages_${contact.id}`);
-      setMessages(storedMessages ? JSON.parse(storedMessages) : []);
+      // Use the loggedInUser ID and contact ID to create a unique key for fetching messages
+      const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
+      const storedMessages = localStorage.getItem(chatKey);
+      if (storedMessages) {
+        setMessages(JSON.parse(storedMessages));
+      } else {
+        setMessages([]);
+      }
     }
   }, [contact]);
 
   const handleSend = () => {
-  
     if (newMessage.trim()) {
       const updatedMessages = [...messages, { text: newMessage, sender: 'user', timestamp: new Date().toISOString() }];
       setMessages(updatedMessages);
-      localStorage.setItem(`messages_${contact.id}`, JSON.stringify(updatedMessages));
+      const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
+      localStorage.setItem(chatKey, JSON.stringify(updatedMessages));
       setNewMessage("");
       
-     
       setTimeout(() => {
         const reply = { text: "Thanks for your message!", sender: 'them', timestamp: new Date().toISOString() };
         const updatedMessagesWithReply = [...updatedMessages, reply];
         setMessages(updatedMessagesWithReply);
-        localStorage.setItem(`messages_${contact.id}`, JSON.stringify(updatedMessagesWithReply));
-      }, 1000); 
+        localStorage.setItem(chatKey, JSON.stringify(updatedMessagesWithReply));
+      }, 1000);
     }
   };
 
   const clearHistory = () => {
     if (contact) {
-      localStorage.removeItem(`messages_${contact.id}`);
+      const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
+      localStorage.removeItem(chatKey);
       setMessages([]);
     }
   };

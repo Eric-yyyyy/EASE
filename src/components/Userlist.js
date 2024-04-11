@@ -16,7 +16,11 @@ function ChatList({ activeContact, setActiveContact }) {
     ];
   
     const handleSelectContact = (contact) => {
-      setActiveContact(contact);
+      if (!localStorage.getItem('user')) {
+        alert('You did not sign in');
+      } else {
+        setActiveContact(contact);
+      }
     };
   
     return (
