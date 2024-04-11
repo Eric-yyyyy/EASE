@@ -21,7 +21,7 @@ function MenuList() {
   return (
     <div className="menu-list">
       <button
-        onClick={() => handleNavigation('/')}
+        onClick={() => handleNavigation('/home')}
         style={isActive('/') ? { ...{ height: 50 }, ...activeStyle } : { height: 50 }}
       >
         EASE

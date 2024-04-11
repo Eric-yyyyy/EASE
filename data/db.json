@@ -2,6 +2,8 @@
     "students": [
         {
             "name": "Alvin",
+            "user_id": "yjiang54",
+            "password": "1111",
             "courses": [
                 {
                     "title": "Human Computer Interaction (CSC212.1.SPRING2024ASE)",
@@ -33,7 +35,127 @@
                 }
                 
             ]
+        },
+        {
+            "name": "Emily",
+            "user_id": "ejeong4",
+            "password": "1111",
+            "courses": [
+                {
+                    "title": "Human Computer Interaction (CSC212.1.SPRING2024ASE)",
+                    "course_id": "CSC212.1.SPRING2024ASE",
+                    "professor": "Y.Y",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Introduction to Artificial Intelligence (CSC242.1.SPRING2024ASE)",
+                    "course_id": "CSC242.1.SPRING2024ASE",
+                    "professor": "D.G",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Video Game History (DMS110.1.SPRING2024ASE)",
+                    "course_id": "DMS110.1.SPRING2024ASE",
+                    "professor": "J.L",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Research Methods in Psychology (PSY219.1.SPRING2024ASE)",
+                    "course_id": "PSY219.1.SPRING2024ASE",
+                    "professor": "K.R | D.M",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Communicating Your Professional Identity - Engineering (CSC273.1.SPRING2024ASE)",
+                    "course_id": "CSC273.1.SPRING2024ASE",
+                    "professor": "Unkown",
+                    "status": "Open",
+                    "info" : "More Info"
+                }
+                
+                
+            ]
+        },
+        {
+            "name": "Sara",
+            "user_id": "sjeiterj",
+            "password": "1111",
+            "courses": [
+                {
+                    "title": "Human Computer Interaction (CSC212.1.SPRING2024ASE)",
+                    "course_id": "CSC212.1.SPRING2024ASE",
+                    "professor": "Y.Y",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Web Programming (CSC210.1.SPRING2024ASE)",
+                    "course_id": "CSC210.1.SPRING2024ASE",
+                    "professor": "A.R",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Elementary Japanese II (JPNS102.1.SPRING2024ASE)",
+                    "course_id": "JPNS102.1.SPRING2024ASE",
+                    "professor": "S.H",
+                    "status": "Open",
+                    "info" : "More Info"
+                }
+                
+                
+                
+            ]
+        },
+        {
+            "name": "Eric",
+            "user_id": "jyang118",
+            "password": "1111",
+            "courses": [
+                {
+                    "title": "Human Computer Interaction (CSC212.1.SPRING2024ASE)",
+                    "course_id": "CSC212.1.SPRING2024ASE",
+                    "professor": "Y.Y",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Introduction to Web Development (CSC170.1.SPRING2024ASE)",
+                    "course_id": "CSC170.1.SPRING2024ASE",
+                    "professor": "E.Z",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Multidimensional Calculus (MATH164.3.SPRING2024ASE)",
+                    "course_id": "MATH164.3.SPRING2024ASE",
+                    "professor": "W.H",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Programming Language Design & Implementation (CSC254.1.SPRING2024ASE)",
+                    "course_id": "CSC254.1.SPRING2024ASE",
+                    "professor": "G.F",
+                    "status": "Open",
+                    "info" : "More Info"
+                },
+                {
+                    "title": "Communicating Your Professional Identity - Engineering (CSC273.6.SPRING2024ASE)",
+                    "course_id": "CSC273.6.SPRING2024ASE",
+                    "professor": "K.M",
+                    "status": "Open",
+                    "info" : "More Info"
+                }
+                
+                
+            ]
         }
         
     ]
+    
 }
