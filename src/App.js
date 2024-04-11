@@ -10,7 +10,7 @@ import LoginPage from './components/LoginPage';
 import './CSS/Style.css';
 
 const App = () => {
-  
+
   return (
     <Router>
       <div className="app">
@@ -27,7 +27,7 @@ const MainLayout = () => {
   const location = useLocation();
 
   if (location.pathname === '/login') {
-    
+
     return null;
   }
 

@@ -1,7 +1,7 @@
 // ChatScreen.js
 import React, { useState } from 'react';
-import ChatList from '../Userlist';
-import ChatServer from '../CourseChat';
+import ChatList from '../ChatList';
+import ChatServer from '../ChatServer';
 import '../../CSS/Chatscreen.css';
 function ChatScreen() {
   const [activeContact, setActiveContact] = useState(null);

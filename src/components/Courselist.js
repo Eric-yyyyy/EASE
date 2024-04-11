@@ -14,5 +14,5 @@ const CourseList = ({ student }) => {
     </div>
   );
 };
- 
+
 export default CourseList;

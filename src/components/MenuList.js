@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 function MenuList() {
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
   const activeStyle = {
     backgroundColor: 'blue',
     color: 'white',
@@ -22,7 +22,7 @@ function MenuList() {
     <div className="menu-list">
       <button
         onClick={() => handleNavigation('/home')}
-        style={isActive('/') ? { ...{ height: 50 }, ...activeStyle } : { height: 50 }}
+        style={isActive('/home') ? { ...{ height: 50 }, ...activeStyle } : { height: 50 }}
       >
         EASE
       </button>

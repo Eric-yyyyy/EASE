@@ -1,11 +1,10 @@
 /* ChatScreen.css */
 .chat-screen {
-    display: flex;
-  }
-  
+  display: flex;
+}
 
-  .chat-server {
-    flex-grow: 1;
-   
-  }
-  
+
+.chat-server {
+  flex-grow: 1;
+
+}

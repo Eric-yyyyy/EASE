@@ -9,11 +9,11 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 style={{ margin: 0 }}>EASE</h1>
       <div className="links">
-      <a href="/About">About</a>
-      <a href="/">Login</a>
+        <a href="/About">About</a>
+        <a href="/">Login</a>
       </div>
     </nav>
   );
 }
- 
+
 export default Navbar;

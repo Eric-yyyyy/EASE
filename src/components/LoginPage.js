@@ -9,7 +9,7 @@ const LoginPage = () => {
   const { data: users, isPending, error } = useFetch('http://localhost:8000/students');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [domain, setDomain] = useState('UR Active Directory'); 
+  const [domain, setDomain] = useState('UR Active Directory');
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -28,15 +28,15 @@ const LoginPage = () => {
     navigate('/home');
   };
 
-  const handleBack = () =>{
+  const handleBack = () => {
     navigate('/home')
   };
 
   // Check if the user is already logged in
   if (localStorage.getItem('user')) {
     return (
-      <div className="login-container">
-        <p>You are already logged in.</p>
+      <div className="logout-container">
+        <div><h1>You are already logged in.</h1></div>
         <button onClick={handleLogout}>Logout</button>
         <button onClick={handleBack}>Back</button>
       </div>
@@ -50,13 +50,19 @@ const LoginPage = () => {
         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" required />
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
         <select value={domain} onChange={(e) => setDomain(e.target.value)}>
+          <option value="" disabled selected>-- select a domain --</option>
           <option value="UR Active Directory">UR Active Directory</option>
-          {/* Add more domains if necessary */}
+          <option value="URMC Active Directory">URMC Active Directory</option>
+
         </select>
-        <button type="submit" disabled={isPending}>Sign in</button>
+        <div class="form-footer">
+          <button type="submit" disabled={isPending}>Sign in</button>
+          <a href="https://uidp-prod.its.rochester.edu/idp/contact.html" className="help-link">Need help?</a>
+        </div>
+
         {error && <div>Error: {error}</div>}
       </form>
-      <a href="#" className="help-link">Need help?</a>
+
     </div>
   );
 };

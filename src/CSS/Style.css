@@ -1,29 +1,26 @@
 /* Style.css */
 .app {
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "aside main"
-      "footer footer";
-    grid-template-columns: 1fr 3fr; 
-    grid-template-rows: auto 1fr auto; 
-    height: 100vh;
-  }
-  
-  .header {
-    grid-area: header;
-    
-  }
-  
-  .aside {
-    grid-area: aside;
-    
-  }
-  
-  .main {
-    grid-area: main;
-    
-  }
-  
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
 
-  
+.header {
+  grid-area: header;
+
+}
+
+.aside {
+  grid-area: aside;
+
+}
+
+.main {
+  grid-area: main;
+
+}

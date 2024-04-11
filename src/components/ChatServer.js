@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/Dmchat.css';
+import '../CSS/ChatServer.css';
 
 function ChatServer({ contact }) {
   const [messages, setMessages] = useState([]);
@@ -26,7 +26,7 @@ function ChatServer({ contact }) {
       const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
       localStorage.setItem(chatKey, JSON.stringify(updatedMessages));
       setNewMessage("");
-      
+
       setTimeout(() => {
         const reply = { text: "Thanks for your message!", sender: 'them', timestamp: new Date().toISOString() };
         const updatedMessagesWithReply = [...updatedMessages, reply];
@@ -62,12 +62,17 @@ function ChatServer({ contact }) {
         ))}
       </div>
       <div className="message-input-area">
-        <input
-          type="text"
+        <textarea
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              handleSend();
+            }
+          }}
           placeholder="Type a message..."
+          rows="3"
         />
         <button onClick={handleSend}>Send</button>
       </div>
