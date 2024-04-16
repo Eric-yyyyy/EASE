@@ -3,6 +3,7 @@
         {
             "name": "Alvin",
             "user_id": "yjiang54",
+            "role":"student",
             "password": "1111",
             "courses": [
                 {
@@ -39,6 +40,7 @@
         {
             "name": "Emily",
             "user_id": "ejeong4",
+            "role":"student",
             "password": "1111",
             "courses": [
                 {
@@ -83,6 +85,7 @@
         {
             "name": "Sara",
             "user_id": "sjeiterj",
+            "role":"student",
             "password": "1111",
             "courses": [
                 {
@@ -114,6 +117,7 @@
         {
             "name": "Eric",
             "user_id": "jyang118",
+            "role":"student",
             "password": "1111",
             "courses": [
                 {
@@ -151,6 +155,24 @@
                     "status": "Open",
                     "info" : "More Info"
                 }
+                
+                
+            ]
+        },
+        {
+            "name": "Yukang",
+            "user_id": "yyan",
+            "role":"instructor",
+            "password": "1111",
+            "courses": [
+                {
+                    "title": "Human Computer Interaction (CSC212.1.SPRING2024ASE)",
+                    "course_id": "CSC212.1.SPRING2024ASE",
+                    "professor": "Y.Y",
+                    "status": "Open",
+                    "info" : "More Info"
+                }
+                
                 
                 
             ]

@@ -7,7 +7,9 @@ import CourseScreen from './components/Screens/CourseScreen';
 import CalendarScreen from './components/Screens/CalendarScreen';
 import ChatScreen from './components/Screens/ChatScreen';
 import LoginPage from './components/LoginPage';
+import ChatServer from './components/ChatServer';
 import './CSS/Style.css';
+import CourseServerScreen from './components/Screens/CourseServerScreen';
 
 const App = () => {
 
@@ -47,6 +49,8 @@ const MainLayout = () => {
           <Route path="/course" element={<CourseScreen />} />
           <Route path="/calendar" element={<CalendarScreen />} />
           <Route path="/chat" element={<ChatScreen />} />
+          <Route path="/courseserver/:courseId" element={<CourseServerScreen />} />
+          <Route path="/courseserver/:courseId/:channelId" element={<ChatServer />} />
         </Routes>
       </main>
     </>
