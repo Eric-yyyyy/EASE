@@ -1,8 +1,11 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Channel from './Channel';
+import "../CSS/Channellist.css"
+import AddButton from "../assets/add_button1.png"
+
 
 function ChannelList({ onChannelSelect }) {
- 
+
   const [editingChannelId, setEditingChannelId] = useState(null);
   const [channelDraftName, setChannelDraftName] = useState('');
   const [channels, setChannels] = useState(() => {
@@ -12,6 +15,10 @@ function ChannelList({ onChannelSelect }) {
   useEffect(() => {
     localStorage.setItem('channels', JSON.stringify(channels));
   }, [channels]);
+  const handleRightClick = (e, channelId) => {
+    e.preventDefault(); 
+    handleChannelEdit(channelId); 
+  };
 
   const handleAddChannel = () => {
     const newChannel = { id: Date.now(), name: 'New Channel' };
@@ -45,6 +52,11 @@ function ChannelList({ onChannelSelect }) {
 
   return (
     <div className="channel-list">
+      <div className="add_channel">
+        <h2>Channel List</h2>
+        <button onClick={handleAddChannel} className="add_channel_button">+</button>
+
+      </div>
       {channels.map(channel => (
         <Channel
           key={channel.id}
@@ -56,9 +68,11 @@ function ChannelList({ onChannelSelect }) {
           draftName={editingChannelId === channel.id ? channelDraftName : ''}
           onDraftNameChange={handleChannelNameChange}
           onSave={() => handleSaveChannelName(channel.id)}
+          onRightClick={(e) => handleRightClick(e, channel.id)}
         />
       ))}
-      <button onClick={handleAddChannel}>Add Channel</button>
+
+
     </div>
   );
 }

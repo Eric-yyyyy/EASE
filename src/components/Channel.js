@@ -1,8 +1,9 @@
 import React from 'react';
+import "../CSS/Channel.css"
 
-function Channel({ channel, onSelect, onDelete, onEdit, isEditing, draftName, onDraftNameChange, onSave }) {
+function Channel({ channel, onSelect, onDelete, onEdit, isEditing, draftName, onDraftNameChange, onSave,onRightClick }) {
   return (
-    <div className="channel-item">
+    <div className="channel-item" >
       {isEditing ? (
         <input
           value={draftName}
@@ -12,11 +13,14 @@ function Channel({ channel, onSelect, onDelete, onEdit, isEditing, draftName, on
           autoFocus
         />
       ) : (
-        <div className="channel" onClick={onSelect} onDoubleClick={() => onEdit()}>
-          {channel.name}
+        <div className="channel" onClick={onSelect} onDoubleClick={() => onEdit() } onContextMenu={onRightClick}>
+        
+            {channel.name}
+            <button className="delete-channel" onClick={onDelete}>-</button>
+          
         </div>
       )}
-      <button className="delete-channel" onClick={onDelete}>Delete</button>
+     
     </div>
   );
 }

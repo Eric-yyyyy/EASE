@@ -28,7 +28,7 @@ function MenuList() {
       </button>
       <button
         onClick={() => handleNavigation('/course')}
-        style={isActive('/course') ? activeStyle : {}}
+        style={isActive('/course') || window.location.pathname.startsWith('/courseserver/') ? activeStyle : {}}
       >
         Courses
       </button>

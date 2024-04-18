@@ -3,14 +3,14 @@
     justify-content: space-between;
   }
   
-  /* ServerMangeList and CourseChatServer would be children of .course-server-screen */
+ 
   .server-manage-list {
-    width: 30%; /* or whatever width you prefer */
-    /* additional styles for ServerMangeList */
+    width: 30%; 
+   
   }
   
   .course-chat-server {
-    width: 100%; /* or whatever width you prefer */
-    /* additional styles for CourseChatServer */
+    width: 100%;
+    
   }
   
