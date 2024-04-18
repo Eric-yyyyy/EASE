@@ -47,7 +47,11 @@ function ChannelList({ onChannelSelect }) {
   };
 
   const handleDeleteChannel = (channelId) => {
-    setChannels(channels.filter(channel => channel.id !== channelId));
+    const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
+    if(confirmDelete){
+      setChannels(channels.filter(channel => channel.id !== channelId));
+    }
+    
   };
 
   return (

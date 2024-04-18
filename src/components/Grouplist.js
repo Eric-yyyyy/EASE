@@ -46,7 +46,11 @@ function GroupList({ onChannelSelect }) {
   };
 
   const handleDeleteGroup = (groupId) => {
-    setGroups(groups.filter(group => group.id !== groupId));
+    const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
+    if(confirmDelete){
+      setGroups(groups.filter(group => group.id !== groupId));
+    }
+    
   };
 
   return (

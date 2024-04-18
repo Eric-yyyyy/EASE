@@ -15,7 +15,7 @@ function Channel({ channel, onSelect, onDelete, onEdit, isEditing, draftName, on
       ) : (
         <div className="channel" onClick={onSelect} onDoubleClick={() => onEdit() } onContextMenu={onRightClick}>
         
-            {channel.name}
+            <p>{channel.name}</p>
             <button className="delete-channel" onClick={onDelete}>-</button>
           
         </div>
