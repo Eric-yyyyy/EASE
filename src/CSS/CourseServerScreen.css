@@ -8,6 +8,16 @@
     width: 30%; 
   }
 
+  .server-manage-list .menu-list>h2{
+    font-size: 1em;
+    background: #00B2EB;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
+  }
+
   .server-manage-list .menu-list {
     background: #fafafa;
   }
