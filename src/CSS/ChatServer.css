@@ -89,8 +89,7 @@
 .clear-history-button {
   padding: 10px 10px;
   border-radius: 15px;
-  background-color: #ea2121;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
   align-self: flex-end;

@@ -66,7 +66,7 @@ function CourseChatServer({ selectedChannel }) {
             <div className="message-bubble">
               <div class="message-header">
                 <div class="message-profile">
-                  <img src={profile} alt='profile picture' className='message-profile-img'></img>
+                  <img src={profile} alt='profile' className='message-profile-img'></img>
                   <span className='message-sender'>{msg.senderId}</span>
                 </div>
                 <span className="message-time">{new Date(msg.timestamp).toLocaleTimeString()}</span>
@@ -86,7 +86,7 @@ function CourseChatServer({ selectedChannel }) {
         />
         <button onClick={handleCourseMessageSend}><img src={sendIcon} alt='send icon'></img></button>
       </div>
-      <button onClick={clearHistory} className="clear-history-button">Clear History</button>
+      <button onClick={clearHistory} className="clear-history-button">Clear Chat History</button>
     </div>
   );
 }

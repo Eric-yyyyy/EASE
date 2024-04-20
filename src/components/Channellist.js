@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Channel from './Channel';
 import "../CSS/Channellist.css"
-import AddButton from "../assets/add_button1.png"
+import AddButton from "../assets/plus.svg"
+
 
 
 function ChannelList({ onChannelSelect, courseId  }) {
@@ -60,7 +61,7 @@ function ChannelList({ onChannelSelect, courseId  }) {
     <div className="channel-list">
       <div className="add_channel">
         <h2>Channels</h2>
-        <button onClick={handleAddChannel} className="add_channel_button">+</button>
+        <button onClick={handleAddChannel} className="add_channel_button"><img width="20px" src={AddButton} alt='add'></img></button>
 
       </div>
       {channels.map(channel => (

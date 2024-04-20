@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Channel from './Channel';
 import "../CSS/Channellist.css"; 
+import AddButton from "../assets/plus.svg";
 
 function GroupList({ onChannelSelect , courseId}) {
   const GROUPS_STORAGE_KEY = `myApp_${courseId}_groups`;
@@ -58,7 +59,7 @@ function GroupList({ onChannelSelect , courseId}) {
     <div className="group-list">
       <div className="add_channel">
         <h2>Groups</h2>
-        <button onClick={handleAddGroup} className="add_channel_button">+</button>
+        <button onClick={handleAddGroup} className="add_channel_button"><img width='20px' src={AddButton} alt='add'></img></button>
       </div>
       {groups.map(group => (
         <Channel
