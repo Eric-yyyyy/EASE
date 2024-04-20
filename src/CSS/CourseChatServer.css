@@ -3,10 +3,18 @@
     flex-direction: column;
     height: 70vh;
     max-height: 70vh;
-    padding: 20px;
     background-color: #fff;
    /* border: 1px solid #ccc;*/
-    margin-left: 20px;
+    margin: 20px;
+  }
+
+  .course-chat-server h2 {
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: #373737;
+    color: white;
+    width: max-content;
   }
   
   .course-message-history {

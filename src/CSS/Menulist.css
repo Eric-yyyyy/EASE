@@ -1,5 +1,6 @@
 /*menulist.css*/
 .menu-list {
+  
   background-color: #ffffff;
   padding: 2rem;
   /* width: min-content; */
@@ -8,6 +9,7 @@
 }
 
 .menu-list button {
+  font-size: 16px;
   display: block;
   width: 80px;
   height: 80px;
