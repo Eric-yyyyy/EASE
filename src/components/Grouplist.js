@@ -20,7 +20,7 @@ function GroupList({ onChannelSelect }) {
   };
 
   const handleAddGroup = () => {
-    const newGroup = { id: Date.now(), name: 'New Group' };
+    const newGroup = { id: Date.now(), name: 'new group' };
     setGroups([...groups, newGroup]);
   };
 
@@ -56,7 +56,7 @@ function GroupList({ onChannelSelect }) {
   return (
     <div className="group-list">
       <div className="add_channel">
-        <h2>Group List</h2>
+        <h2>Groups</h2>
         <button onClick={handleAddGroup} className="add_channel_button">+</button>
       </div>
       {groups.map(group => (

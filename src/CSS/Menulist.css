@@ -1,17 +1,26 @@
 /*menulist.css*/
 .menu-list {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  width: 200px;
-  height: 400px;
+  background-color: #ffffff;
+  padding: 2rem;
+  /* width: min-content; */
+  height: 100%;
+  border-right: 1px solid #efefef;
 }
 
 .menu-list button {
   display: block;
-  width: 100%;
+  width: 80px;
+  height: 80px;
   padding: 10px;
   margin-bottom: 30px;
-  background: #e7e7e7;
-  border: none;
-  border-radius: 5px;
+  background: #ffffff;
+  border: 1px solid #E7E7E7;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.078);
+}
+
+.menu-list button:hover {
+  cursor: pointer;
+  background-color: #f6f6f6;
+  box-shadow: none;
 }

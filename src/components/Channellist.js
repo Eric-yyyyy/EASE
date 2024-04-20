@@ -21,7 +21,7 @@ function ChannelList({ onChannelSelect }) {
   };
 
   const handleAddChannel = () => {
-    const newChannel = { id: Date.now(), name: 'New Channel' };
+    const newChannel = { id: Date.now(), name: 'new channel' };
     setChannels([...channels, newChannel]);
   };
 
@@ -57,7 +57,7 @@ function ChannelList({ onChannelSelect }) {
   return (
     <div className="channel-list">
       <div className="add_channel">
-        <h2>Channel List</h2>
+        <h2>Channels</h2>
         <button onClick={handleAddChannel} className="add_channel_button">+</button>
 
       </div>

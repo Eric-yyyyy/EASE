@@ -6,7 +6,10 @@
  
   .server-manage-list {
     width: 30%; 
-   
+  }
+
+  .server-manage-list .menu-list {
+    background: #fafafa;
   }
   
   .course-chat-server {

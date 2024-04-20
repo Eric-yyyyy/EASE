@@ -6,7 +6,7 @@ function MenuList() {
   const navigate = useNavigate();
   const location = useLocation();
   const activeStyle = {
-    backgroundColor: 'blue',
+    backgroundColor: 'black',
     color: 'white',
   };
 
@@ -22,7 +22,7 @@ function MenuList() {
     <div className="menu-list">
       <button
         onClick={() => handleNavigation('/home')}
-        style={isActive('/home') ? { ...{ height: 50 }, ...activeStyle } : { height: 50 }}
+        style={isActive('/home') ? { ...{}, ...activeStyle } : {}}
       >
         EASE
       </button>
