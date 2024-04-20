@@ -5,7 +5,7 @@ import AddButton from "../assets/plus.svg"
 
 
 
-function ChannelList({ onChannelSelect, courseId  }) {
+function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
   const CHANNELS_STORAGE_KEY = `myApp_${courseId}_channels`;
   
 
@@ -53,6 +53,7 @@ function ChannelList({ onChannelSelect, courseId  }) {
     const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
     if(confirmDelete){
       setChannels(channels.filter(channel => channel.id !== channelId));
+      onChannelDeletion(channelId);
     }
     
   };

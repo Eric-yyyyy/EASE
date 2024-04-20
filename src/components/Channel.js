@@ -20,7 +20,10 @@ function Channel({ channel, onSelect, onDelete, onEdit, isEditing, draftName, on
               <img src={icon} alt='hashtag icon' className='channel-hashtag'></img>
               <p>{channel.name}</p>
             </div>
-            <button className="delete-channel" onClick={onDelete}><img width='15px' src={minus} alt='delete'></img></button>
+            <button className="delete-channel" onClick={(e) => {
+              e.stopPropagation();  // Stop the event from bubbling up to the parent div
+              onDelete();
+            }}><img width='15px' src={minus} alt='delete'></img></button>
           
         </div>
       )}

@@ -3,7 +3,7 @@ import Channel from './Channel';
 import "../CSS/Channellist.css"; 
 import AddButton from "../assets/plus.svg";
 
-function GroupList({ onChannelSelect , courseId}) {
+function GroupList({ onChannelSelect , courseId,onChannelDeletion}) {
   const GROUPS_STORAGE_KEY = `myApp_${courseId}_groups`;
   const [editingGroupId, setEditingGroupId] = useState(null);
   const [groupDraftName, setGroupDraftName] = useState('');
@@ -51,6 +51,7 @@ function GroupList({ onChannelSelect , courseId}) {
     const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
     if(confirmDelete){
       setGroups(groups.filter(group => group.id !== groupId));
+      onChannelDeletion(groupId);
     }
     
   };
