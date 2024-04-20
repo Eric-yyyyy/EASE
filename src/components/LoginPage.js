@@ -55,7 +55,7 @@ const LoginPage = () => {
           <option value="URMC Active Directory">URMC Active Directory</option>
 
         </select>
-        <div class="form-footer">
+        <div className="form-footer">
           <button type="submit" disabled={isPending}>Sign in</button>
           <a href="https://uidp-prod.its.rochester.edu/idp/contact.html" className="help-link">Need help?</a>
         </div>

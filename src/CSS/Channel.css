@@ -53,4 +53,5 @@
 
 .channel-item .channel .delete-channel:hover{
     color: #9a9a9a;
+    filter: brightness(2.0); 
 }

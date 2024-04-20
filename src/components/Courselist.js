@@ -5,8 +5,8 @@ import "../CSS/courselist.css";
 const CourseList = ({ student }) => {
   const navigate = useNavigate();
 
-  const goToCourseServerScreen = (courseId) => {
-    navigate(`/courseserver/${courseId}`);
+  const goToCourseServerScreen = (course) => {
+    navigate(`/courseserver/${course.course_id}`, { state: { course } });
   };
 
   return (
@@ -15,7 +15,7 @@ const CourseList = ({ student }) => {
         <div 
           className="courses-preview" 
           key={course.course_id}
-          onClick={() => goToCourseServerScreen(course.course_id)} 
+          onClick={() => goToCourseServerScreen(course)} 
         >
           <h2>{course.title}</h2>
           <p>{course.status} | {course.professor} | {course.info}</p>

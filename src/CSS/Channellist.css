@@ -27,5 +27,6 @@
 
 .add_channel .add_channel_button:hover{
     color:rgb(144, 144, 144);
+    filter: brightness(2.0); 
     background-color: transparent;
 }
