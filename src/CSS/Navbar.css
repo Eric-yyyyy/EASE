@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  padding: 20px;
+  padding: 20px 30px;
   display: flex;
   align-items: center;
   max-width: 100%;
@@ -24,12 +24,14 @@
 
 .navbar .links {
   margin-left: auto;
+  font-weight: bold;
 }
 
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+  color: #00B2EB;
 }
 
 .navbar a:hover {

@@ -6,8 +6,10 @@ function MenuList() {
   const navigate = useNavigate();
   const location = useLocation();
   const activeStyle = {
-    backgroundColor: '#373737',
-    color: 'white',
+    backgroundColor: '#DCF7FF',
+    color: '#00B2EB',
+    boxShadow: 'none',
+    border: '3px solid #00B2EB',
   };
 
   const handleNavigation = (path) => {
