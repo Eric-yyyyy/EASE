@@ -58,7 +58,7 @@ function CourseChatServer({ selectedChannel }) {
 
   return (
     <div className="course-chat-server">
-      <h2>{selectedChannel.name}</h2>
+      <h2>#{selectedChannel.name}</h2>
       <div className="course-message-history">
         {courseMessages.map((msg, index) => (
           <div key={index} className={`message ${msg.senderId === loggedInUser.user_id ? 'user' : 'them'}`}>

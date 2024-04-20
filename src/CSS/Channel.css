@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: row;
     padding: 15px;
+    gap: 10px;
 }
 
 .channel-item .channel:hover{
@@ -24,9 +25,9 @@
   box-shadow: none;
 }
 
-.channel-item p{
+/* .channel-item p{
     margin-left: 20px;
-}
+} */
 .channel-item .channel .delete-channel {
     margin-top: 30px;
     font-size: 20px;
