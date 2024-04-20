@@ -54,7 +54,7 @@ function CourseChatServer({ selectedChannel }) {
   };
 
   if (!selectedChannel) {
-    return <div className="course-chat-placeholder">Please select a channel to start chatting.</div>;
+    return <div className="course-chat-placeholder">Select a channel to start chatting!</div>;
   }
 
   return (
