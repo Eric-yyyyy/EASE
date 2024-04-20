@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/CourseChatServer.css';
-import profile from '../assets/profile.png';
+import profile from '../assets/profile.svg';
+import sendIcon from '../assets/send.svg';
 
 function CourseChatServer({ selectedChannel }) {
   const [courseMessages, setCourseMessages] = useState([]);
@@ -83,7 +84,7 @@ function CourseChatServer({ selectedChannel }) {
           placeholder="Type your message here..."
           rows="3"
         />
-        <button onClick={handleCourseMessageSend}>Send</button>
+        <button onClick={handleCourseMessageSend}><img src={sendIcon} alt='send icon'></img></button>
       </div>
       <button onClick={clearHistory} className="clear-history-button">Clear History</button>
     </div>
