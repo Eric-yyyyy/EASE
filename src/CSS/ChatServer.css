@@ -90,9 +90,10 @@
 .clear-history-button {
   padding: 10px 10px;
   border-radius: 15px;
-  color: rgb(0, 0, 0);
+  color: #555555;
   border: none;
   cursor: pointer;
   align-self: flex-end;
   margin-top: 20px;
+  font-weight: bold;
 }
