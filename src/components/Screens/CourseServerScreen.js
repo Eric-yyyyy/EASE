@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ServerMange from '../ServerMangeList';
 import CourseChatServer from '../CourseChatServer';
 import '../../CSS/CourseServerScreen.css';
 
 function CourseServerScreen() {
+  let { courseId } = useParams();
   const [selectedChannel, setSelectedChannel] = useState(null);
   const isLoggedIn = localStorage.getItem('user') !== null;
 
@@ -12,7 +14,7 @@ function CourseServerScreen() {
       {isLoggedIn ? (
         <>
           <div className="server-manage-list">
-            <ServerMange onChannelSelect={setSelectedChannel} />
+            <ServerMange onChannelSelect={setSelectedChannel} courseId={courseId}/>
           </div>
           <div className="course-chat-server">
             <CourseChatServer selectedChannel={selectedChannel} />

@@ -4,16 +4,18 @@ import "../CSS/Channellist.css"
 import AddButton from "../assets/add_button1.png"
 
 
-function ChannelList({ onChannelSelect }) {
+function ChannelList({ onChannelSelect, courseId  }) {
+  const CHANNELS_STORAGE_KEY = `myApp_${courseId}_channels`;
+  
 
   const [editingChannelId, setEditingChannelId] = useState(null);
   const [channelDraftName, setChannelDraftName] = useState('');
   const [channels, setChannels] = useState(() => {
-    const savedChannels = localStorage.getItem('channels');
+    const savedChannels = localStorage.getItem(CHANNELS_STORAGE_KEY);
     return savedChannels ? JSON.parse(savedChannels) : [];
   });
   useEffect(() => {
-    localStorage.setItem('channels', JSON.stringify(channels));
+    localStorage.setItem(CHANNELS_STORAGE_KEY, JSON.stringify(channels));
   }, [channels]);
   const handleRightClick = (e, channelId) => {
     e.preventDefault(); 

@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Channel from './Channel';
 import "../CSS/Channellist.css"; 
 
-function GroupList({ onChannelSelect }) {
+function GroupList({ onChannelSelect , courseId}) {
+  const GROUPS_STORAGE_KEY = `myApp_${courseId}_groups`;
   const [editingGroupId, setEditingGroupId] = useState(null);
   const [groupDraftName, setGroupDraftName] = useState('');
   const [groups, setGroups] = useState(() => {
-    const savedGroups = localStorage.getItem('groups');
+    const savedGroups = localStorage.getItem(GROUPS_STORAGE_KEY );
     return savedGroups ? JSON.parse(savedGroups) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('groups', JSON.stringify(groups));
+    localStorage.setItem(GROUPS_STORAGE_KEY , JSON.stringify(groups));
   }, [groups]);
 
   const handleRightClick = (e, groupId) => {

@@ -5,12 +5,12 @@ import GroupList from './Grouplist';
 import "../CSS/ServerMangeList.css"
 
 
-function ServerMangeList({ onChannelSelect }) {
+function ServerMangeList({ onChannelSelect,courseId  }) {
   return (
     <div className="menu-list">
     
-      <ChannelList onChannelSelect={onChannelSelect} />
-      <GroupList onChannelSelect={onChannelSelect} />
+      <ChannelList onChannelSelect={onChannelSelect}  courseId={courseId} />
+      <GroupList onChannelSelect={onChannelSelect}  courseId={courseId}/>
     </div>
   );
 }
