@@ -34,7 +34,8 @@
     background-color: #F7F7F7;
     border-radius: 15px;
     border: 2px solid #E7E7E7;
-    padding: 10px
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
   }
   
   .course-message-input-area textarea {
@@ -118,13 +119,22 @@
     margin-left: 55px;
   }
   
-  .message.user .message-bubble, .message.them .message-bubble {
+  .message.user .message-bubble {
+    background-color: #F7F7F7;
+    align-self: flex-end;
+    /* border: 2px solid #E7E7E7; */
+    border-radius: 15px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065); */
+  }
+
+  .message.them .message-bubble {
     background-color: #ffffff;
     align-self: flex-end;
-    border: 2px solid #E7E7E7;
+    /* border: 2px solid #E7E7E7; */
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065); */
   }
+  
   
   
   .message-time {
