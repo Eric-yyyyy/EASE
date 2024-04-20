@@ -84,7 +84,7 @@ function CourseChatServer({ selectedChannel }) {
           placeholder="Type your message here..."
           rows="3"
         />
-        <button onClick={handleCourseMessageSend}><img src={sendIcon} alt='send icon'></img></button>
+        <button onClick={handleCourseMessageSend}><img src={sendIcon} alt='send icon' color='rgb(85, 85, 85)'></img></button>
       </div>
       <button onClick={clearHistory} className="clear-history-button">Clear Chat History</button>
     </div>

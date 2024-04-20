@@ -7,9 +7,9 @@
     height: 40px;
     cursor: pointer;
     background: #ffffff;
-    border: 1px solid #E7E7E7;
+    border: 2px solid #E7E7E7;
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.078);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
 }
 
 .channel-name {
@@ -28,9 +28,9 @@
 .channel-item input {
     height: 40px;
     background: #ffffff;
-    border: 1px solid #E7E7E7;
+    border: 2px solid #E7E7E7;
     border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.078);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
     margin-bottom: 10px;
     font-size: 1em;
     padding: 0 15px;

@@ -17,9 +17,9 @@
   padding: 10px;
   margin-bottom: 30px;
   background: #ffffff;
-  border: 1px solid #E7E7E7;
+  border: 2px solid #E7E7E7;
   border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.078);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
 }
 
 .menu-list button:hover {

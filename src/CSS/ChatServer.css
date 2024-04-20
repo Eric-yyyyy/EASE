@@ -16,7 +16,7 @@
 
 .message-input-area textarea {
   flex-grow: 1;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   padding: 10px;
   margin-right: 10px;
   margin-top: 40;
@@ -58,9 +58,10 @@
 .message-bubble .message-time {
   display: block;
   text-align: right;
-  color: #666;
   margin-top: 5px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+    color: #999999;
+    font-weight: bold;
 }
 
 .message-input-area {
@@ -73,7 +74,7 @@
 
 .message-input-area input {
   flex-grow: 1;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   padding: 10px;
   margin-right: 10px;
 }
