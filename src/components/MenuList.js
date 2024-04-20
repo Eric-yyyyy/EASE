@@ -40,12 +40,12 @@ function MenuList() {
       >
         Calendar
       </button>
-      <button
+      {/* <button
         onClick={() => handleNavigation('/chat')}
         style={isActive('/chat') ? activeStyle : {}}
       >
         Chat
-      </button>
+      </button> */}
     </div>
   );
 }
