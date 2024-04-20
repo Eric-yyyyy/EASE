@@ -41,7 +41,8 @@ const MainLayout = () => {
         <Navbar />
       </header>
       <aside className="aside">
-        <MenuList />
+        {/* <MenuList /> */}
+        <CourseScreen />
       </aside>
       <main className="main">
         <Routes>

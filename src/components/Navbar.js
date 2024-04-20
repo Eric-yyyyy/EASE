@@ -11,6 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <img height='35px' src={logo} alt='logo'></img>
       <div className="links">
+        <a href="/calendar">Calendar</a>
         <a href="/About">About</a>
         <a href="/"><img src={profile} alt="profile" height="50px"></img></a>
       </div>
