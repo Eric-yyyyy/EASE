@@ -25,6 +25,8 @@
 .navbar .links {
   margin-left: auto;
   font-weight: bold;
+  align-items: center;
+  display: flex;
 }
 
 .navbar a {
