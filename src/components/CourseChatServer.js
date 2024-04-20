@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/CourseChatServer.css';
+import profile from '../assets/profile.png';
 
 function CourseChatServer({ selectedChannel }) {
   const [courseMessages, setCourseMessages] = useState([]);
@@ -57,13 +58,19 @@ function CourseChatServer({ selectedChannel }) {
 
   return (
     <div className="course-chat-server">
-      <h2>Course Chat: {selectedChannel.name}</h2>
+      <h2>{selectedChannel.name}</h2>
       <div className="course-message-history">
         {courseMessages.map((msg, index) => (
           <div key={index} className={`message ${msg.senderId === loggedInUser.user_id ? 'user' : 'them'}`}>
             <div className="message-bubble">
+              <div class="message-header">
+                <div class="message-profile">
+                  <img src={profile} alt='profile picture' className='message-profile-img'></img>
+                  <span className='message-sender'>{msg.senderId}</span>
+                </div>
+                <span className="message-time">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+              </div>
               <span>{msg.text}</span>
-              <span className="message-time">{new Date(msg.timestamp).toLocaleTimeString()}</span>
             </div>
           </div>
         ))}

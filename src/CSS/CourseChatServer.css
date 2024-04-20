@@ -20,8 +20,8 @@
   .course-message-history {
     overflow-y: auto;
     flex-grow: 1;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 10px 0;
+    margin: 30px 0;
     /* background-color: #f5f5f5; */
   }
   
@@ -59,15 +59,38 @@
     font-size: 1em;
     
   }
+
+  .course-message-input-area button:hover {
+    color: rgb(132, 132, 132);
+    
+  }
   
   .message {
     display: flex;
     align-items: flex-end;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .message-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .message-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .message.user {
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
+  }
+
+  .message-profile-img {
+    width: 50px;
+    height: 50px;
   }
   
   .message.them {
@@ -75,22 +98,28 @@
   }
   
   .message-bubble {
-    max-width: 60%;
+    font-size: 1em;
+    max-width: 100%;
+    width: 100%;
     word-wrap: break-word;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .message-bubble span {
+    margin-left: 10px;
   }
   
-  .message.user .message-bubble {
-    background-color: #a2cff0;
+  .message.user .message-bubble, .message.them .message-bubble {
+    background-color: #ffffff;
     align-self: flex-end;
+    border: 1px solid #E7E7E7;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.078);
   }
   
-  .message.them .message-bubble {
-    background-color: #e0e0e0;
-    align-self: flex-start;
-  }
   
   .message-time {
     font-size: 0.75rem;
