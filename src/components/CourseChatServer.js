@@ -70,7 +70,7 @@ function CourseChatServer({ selectedChannel }) {
                 </div>
                 <span className="message-time">{new Date(msg.timestamp).toLocaleTimeString()}</span>
               </div>
-              <span>{msg.text}</span>
+              <span className='message-text'>{msg.text}</span>
             </div>
           </div>
         ))}
