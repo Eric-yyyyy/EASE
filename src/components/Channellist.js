@@ -7,6 +7,7 @@ import AddButton from "../assets/plus.svg"
 
 function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
   const CHANNELS_STORAGE_KEY = `myApp_${courseId}_channels`;
+  console.log(CHANNELS_STORAGE_KEY)
   
 
   const [editingChannelId, setEditingChannelId] = useState(null);
@@ -22,6 +23,12 @@ function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
     e.preventDefault(); 
     handleChannelEdit(channelId); 
   };
+  useEffect(() => {
+    
+    const savedChannels = localStorage.getItem(CHANNELS_STORAGE_KEY);
+    setChannels(savedChannels ? JSON.parse(savedChannels) : []);
+  }, [courseId]); 
+  
 
   const handleAddChannel = () => {
     const newChannel = { id: Date.now(), name: 'new channel' };

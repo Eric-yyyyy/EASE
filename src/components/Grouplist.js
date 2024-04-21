@@ -15,6 +15,11 @@ function GroupList({ onChannelSelect , courseId,onChannelDeletion}) {
   useEffect(() => {
     localStorage.setItem(GROUPS_STORAGE_KEY , JSON.stringify(groups));
   }, [groups]);
+  useEffect(() => {
+    
+    const savedGroups = localStorage.getItem(GROUPS_STORAGE_KEY);
+    setGroups(savedGroups ? JSON.parse(savedGroups) : []);
+  }, [courseId]); 
 
   const handleRightClick = (e, groupId) => {
     e.preventDefault(); 

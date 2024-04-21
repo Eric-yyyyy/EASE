@@ -12,8 +12,9 @@ function ServerMangeList({ onChannelSelect,course,setActiveContact,onChannelDele
   return (
     <div className="menu-list">
       <h2>{removeCourseIdFromTitle(course.title)}</h2>
-      <ChannelList onChannelSelect={onChannelSelect} course={course} onChannelDeletion={onChannelDeletion}/>
-      <GroupList onChannelSelect={onChannelSelect} course={course} onChannelDeletion={onChannelDeletion}/>
+      <ChannelList onChannelSelect={onChannelSelect} courseId={course.course_id} onChannelDeletion={onChannelDeletion}/>
+      {/* {console.log(course.course_id)} */}
+      <GroupList onChannelSelect={onChannelSelect} courseId={course.course_id} onChannelDeletion={onChannelDeletion}/>
       <ChatList setActiveContact={setActiveContact} />
     </div>
   );
