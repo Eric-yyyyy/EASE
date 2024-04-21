@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/ChatServer.css';
+import profile from '../assets/profile.svg';
+import sendIcon from '../assets/send.svg';
 
 function ChatServer({ contact }) {
   const [messages, setMessages] = useState([]);
@@ -55,13 +57,19 @@ function ChatServer({ contact }) {
         {messages.map((message, index) => (
           <div key={index} className={`message ${message.sender}`}>
             <div className="message-bubble">
-              <span>{message.text}</span>
-              <span className="message-time">{new Date(message.timestamp).toLocaleTimeString()}</span>
+            <div class="message-header">
+                <div class="message-profile">
+                  <img src={profile} alt='profile' className='message-profile-img'></img>
+                  <span className='message-sender'>{message.sender === 'user' ? loggedInUser.user_id : contact.name}</span>
+                </div>
+                <span className="message-time">{new Date(message.timestamp).toLocaleTimeString()}</span>
+              </div>
+              <span className='message-text'>{message.text}</span>
             </div>
           </div>
         ))}
       </div>
-      <div className="message-input-area">
+      <div className="course-message-input-area">
         <textarea
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
@@ -71,10 +79,10 @@ function ChatServer({ contact }) {
               handleSend();
             }
           }}
-          placeholder="Type a message..."
+          placeholder="Type your message here..."
           rows="3"
         />
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend}><img src={sendIcon} alt='send icon' color='rgb(85, 85, 85)'></img></button>
       </div>
       <button onClick={clearHistory} className="clear-history-button">Clear History</button>
     </div>

@@ -1,26 +1,29 @@
 .chat-server {
   display: flex;
   flex-direction: column;
-  height: 70vh;
-  max-height: 70vh;
+  height: 90vh;
+  /* max-height: 90vh; */
   padding-bottom: 20px;
+  margin: 20px;
 }
 
 .message-history {
   overflow-y: auto;
   flex-grow: 1;
-  padding: 10px;
-  margin-bottom: 10px;
+  margin: 30px 0;
+  padding: 10px 0;
   min-height: 0;
 }
 
 .message-input-area textarea {
-  flex-grow: 1;
-  border: 2px solid #ccc;
-  padding: 10px;
-  margin-right: 10px;
-  margin-top: 40;
-  resize: none;
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    resize: none;
+    background-color: transparent;
+    font-size: 1em;
+
 }
 
 
@@ -66,9 +69,14 @@
 
 .message-input-area {
   flex-shrink: 0;
-  display: flex;
-  padding: 10px 0;
-
+    display: flex;
+    align-items: center;
+    /* padding-top: 10px; */
+    background-color: #F7F7F7;
+    border-radius: 15px;
+    border: 2px solid #E7E7E7;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.065);
 }
 
 
@@ -80,11 +88,11 @@
 }
 
 .message-input-area button {
-  background-color: #007bff;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  background: transparent;
 }
 
 .clear-history-button {
