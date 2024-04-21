@@ -4,46 +4,49 @@ const memberData = {
       "courseTitle": "Human Computer Interaction",
       "instructor": {
         "name": "Yukang Yan",
+        "id": "27",
         "email": "yukang.yan@rochester.edu"
       },
       "TAs": [
         {
           "name": "Tariq Adnan",
+          "id": '28',
           "email": "tadnan@ur.rochester.edu"
         },
         {
           "name": "Yufei Li",
+          "id": '29',
           "email": "" // If there's an email, add it here
         }
       ],
       "students": [
-        { "name": "Akber Ahmed" },
-        { "name": "Jingjing Chen" },
-        { "name": "Mandy Cheng" },
-        { "name": "Richard Chuong" },
-        { "name": "David Costello" },
-        { "name": "Carson Commins" },
-        { "name": "Joe Dapello" },
-        { "name": "Frankie DiGiorgio" },
-        { "name": "Sara Jeiter-Johnson" },
-        { "name": "Emily Jeong" },
-        { "name": "Alvin Jiang" },
-        { "name": "Alan Jimenez" },
-        { "name": "Joshua Jones" },
-        { "name": "Pai Liu" },
-        { "name": "Raye Liu" },
-        { "name": "Yuhao Lu" },
-        { "name": "Julia McQuiston" },
-        { "name": "Tochi Onwuasoanya" },
-        { "name": "Neeley Pate" },
-        { "name": "Mila Paymukhina" },
-        { "name": "Liam Ryan" },
-        { "name": "Jacob Schoenfeld" },
-        { "name": "Keer Song" },
-        { "name": "Jiamu Tang" },
-        { "name": "Eric Yang" },
-        { "name": "Andy Yu" },
-        { "name": "Jenny Zheng" }
+        { "name": "Akber Ahmed","id": '1' },
+        { "name": "Jingjing Chen" ,"id": '2'},
+        { "name": "Mandy Cheng" ,"id": '3'},
+        { "name": "Richard Chuong" ,"id":'4'},
+        { "name": "David Costello" ,"id": '5'},
+        { "name": "Carson Commins" ,"id": '6'},
+        { "name": "Joe Dapello" ,"id": '7'},
+        { "name": "Frankie DiGiorgio" ,"id": '8'},
+        { "name": "Sara Jeiter-Johnson" ,"id": '9'},
+        { "name": "Emily Jeong" ,"id": '10'},
+        { "name": "Alvin Jiang" ,"id": '11'},
+        { "name": "Alan Jimenez" ,"id": '12'},
+        { "name": "Joshua Jones" ,"id": '13'},
+        { "name": "Pai Liu" ,"id": '14'},
+        { "name": "Raye Liu" ,"id": '15'},
+        { "name": "Yuhao Lu" ,"id": '16'},
+        { "name": "Julia McQuiston" ,"id": '17'},
+        { "name": "Tochi Onwuasoanya" ,"id": '18'},
+        { "name": "Neeley Pate" ,"id": '19'},
+        { "name": "Mila Paymukhina" ,"id": '20'},
+        { "name": "Liam Ryan" ,"id": '21'},
+        { "name": "Jacob Schoenfeld" ,"id": '22'},
+        { "name": "Keer Song" ,"id": '23'},
+        { "name": "Jiamu Tang" ,"id": '24'},
+        { "name": "Eric Yang" ,"id": '1'},
+        { "name": "Andy Yu" ,"id": '25'},
+        { "name": "Jenny Zheng","id": '26' }
         
       ]
     }

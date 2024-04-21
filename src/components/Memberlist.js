@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import memberData from './member'; 
 import '../CSS/Memberlist.css';
+import minus from "../assets/minus.svg"
 import profile from '../assets/profile.svg';
 
 const MemberList = ({ courseId,onUserClick  }) => {
@@ -8,9 +9,12 @@ const MemberList = ({ courseId,onUserClick  }) => {
 
   useEffect(() => {
     const courseMembers = memberData[courseId] || {
-      instructor: { name: "anonymous" },
-      TAs: [{ name: "anonymous" }, { name: "anonymous" }],
-      students: new Array(10).fill({ name: "anonymous" }) 
+      instructor: { name: "anonymous", id: "30" },
+      TAs: [{ name: "anonymous" , id : "31"}, { name: "anonymous" ,id : "32"}],
+      students: new Array(10).fill(null).map((_, index) => ({
+        name: "anonymous",
+        id: (33 + index).toString()  
+    }))
     };
     setMembers(courseMembers);
   }, [courseId]);
