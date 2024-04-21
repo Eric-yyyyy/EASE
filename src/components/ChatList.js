@@ -1,6 +1,7 @@
 
 import React from 'react';
 import '../CSS/ChatList.css'
+import profile from '../assets/profile.svg';
 
 import { useState } from 'react';
 
@@ -9,10 +10,10 @@ function ChatList({ activeContact, setActiveContact }) {
 
 
   const contacts = [
-    { name: 'Jack', id: 1 },
-    { name: 'Johnny', id: 2 },
-    { name: 'Jane', id: 3 },
-    { name: 'Mary', id: 4 },
+    { name: 'Jack Smith', id: 1 },
+    { name: 'Johnny Park', id: 2 },
+    { name: 'Jane Johnson', id: 3 },
+    { name: 'Mary Jackson', id: 4 },
   ];
 
   const handleSelectContact = (contact) => {
@@ -25,14 +26,15 @@ function ChatList({ activeContact, setActiveContact }) {
 
   return (
     <div className="chat-list">
-      <h2>Contact List</h2>
+      <h2>DMs</h2>
       {contacts.map((contact) => (
-        <div
-          key={contact.id}
-          className={`contact-item ${activeContact && activeContact.id === contact.id ? 'active' : ''}`}
-          onClick={() => setActiveContact(contact)}
-        >
-          {contact.name}
+        <div key={contact.id}
+            className={`chat-contact ${activeContact && activeContact.id === contact.id ? 'active' : ''}`}
+            onClick={() => setActiveContact(contact)}>
+          <img src={profile} alt="profile" width='50px'></img>
+          <div class='contact-item'>
+            {contact.name}
+          </div>
         </div>
       ))}
     </div>
