@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    /* height: 40px; */
+    height: 40px;
     cursor: pointer;
     background: #ffffff;
     border: 2px solid #E7E7E7;
@@ -17,6 +17,15 @@
     flex-direction: row;
     padding: 15px;
     gap: 10px;
+    text-overflow: ellipsis;
+}
+
+.channel-name p {
+    width: 80px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
 }
 
 .channel-item .channel:hover{

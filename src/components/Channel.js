@@ -18,7 +18,7 @@ function Channel({ channel, onSelect, onDelete, onEdit, isEditing, draftName, on
         <div className="channel" onClick={onSelect} onDoubleClick={() => onEdit() } onContextMenu={onRightClick}>
             <div class="channel-name">
               <img src={icon} alt='hashtag icon' className='channel-hashtag'></img>
-              <p>{channel.name.length < 8 ? channel.name : channel.name.substring(0, 8) + "..."}</p>
+              <p>{channel.name}</p>
             </div>
             <button className="delete-channel" onClick={(e) => {
               e.stopPropagation();  // Stop the event from bubbling up to the parent div
