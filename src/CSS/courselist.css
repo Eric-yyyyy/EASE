@@ -25,3 +25,46 @@
 .courses-preview a {
   text-decoration: none;
 }
+
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.tooltip-text {
+  visibility: hidden;
+  width: 220px;
+  background-color: #f9f9f9;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 70%;
+  margin-left: -110px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #f9f9f9 transparent transparent transparent;
+}
+
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
