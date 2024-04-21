@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import ServerMange from '../ServerMangeList';
 import CourseChatServer from '../CourseChatServer';
 import ChatServer from '../ChatServer'; 
+import MemberList from '../Memberlist'
 import '../../CSS/CourseServerScreen.css';
 
 function CourseServerScreen() {
@@ -12,6 +13,8 @@ function CourseServerScreen() {
   const [selectedChannel, setSelectedChannel] = useState(null);
   const [activeContact, setActiveContact] = useState(null); 
   const isLoggedIn = localStorage.getItem('user') !== null;
+
+  
   
 
   const handleChannelSelect = (channel) => {
@@ -24,6 +27,10 @@ function CourseServerScreen() {
      
     }
   }
+  const handleUserClick = (user) => {
+    console.log(user.name);
+   
+  };
   useEffect(() => {
     if (!selectedChannel) {
      
@@ -46,6 +53,9 @@ function CourseServerScreen() {
             ) : (
               <CourseChatServer selectedChannel={selectedChannel} /> 
             )}
+          </div>
+          <div className="member-list-section">
+            {course && <MemberList courseId={course.course_id} onUserClick={handleUserClick} />}
           </div>
         </>
       ) : (
