@@ -29,6 +29,7 @@ const CourseList = ({ student }) => {
       {student.courses.map(course => (
         <div 
           className="courses-preview tooltip-container" 
+          style={isActiveCourse(course.course_id) ? activeStyle : {}}
           key={course.course_id}
           onClick={() => goToCourseServerScreen(course)} 
         >
