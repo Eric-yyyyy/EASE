@@ -16,9 +16,10 @@
 
 .course-screen {
   height: 90vh;
-  max-height: 100vh;
+  max-height: 90vh;
   overflow-y: scroll;
   border-right: 1px solid #e7e7e7;
+  scrollbar-width: none;
 }
 
 .course-list {

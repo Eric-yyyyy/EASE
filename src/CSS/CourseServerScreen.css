@@ -6,6 +6,10 @@
  
   .server-manage-list {
     width: 30%; 
+    height: 90vh;
+    max-height: 90vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
   }
 
   .server-manage-list .menu-list>h2{
