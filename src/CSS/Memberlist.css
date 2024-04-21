@@ -1,0 +1,30 @@
+.member-list-section {
+    padding: 20px;
+    background: #FAFAFA;
+    border-left: 1px solid #E7E7E7;
+    width: 300px;
+}
+
+.member-heading {
+    text-align: center;
+}
+
+.member-list h3 {
+    font-size: 1em;
+    margin: 20px 0 10px 0;
+    color: #7B7B7B;
+    font-weight: normal;
+}
+
+.member-contact {
+    display: flex;
+    gap: 7px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.member-contact:hover {
+  background-color: #f3f3f3;
+  color: white;
+}

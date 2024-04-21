@@ -11,15 +11,11 @@
 
 .chat-contact {
   display: flex;
-  justify-content: space-between;
+  gap: 7px;
   align-items: center;
   cursor: pointer;
-  border-top: 2px solid #E7E7E7;
-  padding: 0 10px;
-}
-
-.contact-item {
-
+  /* border-top: 2px solid #E7E7E7; */
+  border-radius: 15px;
 }
 
 .chat-contact:hover,
