@@ -3,7 +3,7 @@ import Channel from './Channel';
 import "../CSS/Channellist.css"; 
 import AddButton from "../assets/plus.svg";
 
-function GroupList({ onChannelSelect , courseId,onChannelDeletion}) {
+function GroupList({ onChannelSelect , courseId,onChannelDeletion, groupRole}) {
   const GROUPS_STORAGE_KEY = `myApp_${courseId}_groups`;
   const [editingGroupId, setEditingGroupId] = useState(null);
   const [groupDraftName, setGroupDraftName] = useState('');
@@ -79,6 +79,7 @@ function GroupList({ onChannelSelect , courseId,onChannelDeletion}) {
           onDraftNameChange={handleGroupNameChange}
           onSave={() => handleSaveGroupName(group.id)}
           onRightClick={(e) => handleRightClick(e, group.id)}
+          groupRole = {groupRole}
         />
       ))}
     </div>

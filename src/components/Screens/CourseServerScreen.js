@@ -8,10 +8,13 @@ import '../../CSS/CourseServerScreen.css';
 
 function CourseServerScreen() {
     const location = useLocation();
-    const { course } = location.state || {};
+    const { course, role, userId } = location.state || {}; 
+    console.log(role);
+    console.log(userId)
 
    
-    const getStorageKey = () => `chat_contacts_${course ? course.course_id : 'default'}`;
+    const getStorageKey = () => `chat_contacts_${userId}_${course ? course.course_id : 'default'}`;
+    console.log(getStorageKey())
 
     
     const [contacts, setContacts] = useState(() => {
@@ -71,6 +74,8 @@ function CourseServerScreen() {
                             contacts={contacts} 
                             setContacts={setContacts}
                             onDeleteContact={handleDeleteContact}
+                            role={role}
+                            userId = {userId}
                         />
                     </div>
                     <div className="course-chat-server">

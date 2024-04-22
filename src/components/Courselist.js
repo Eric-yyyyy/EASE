@@ -9,7 +9,7 @@ const CourseList = ({ student }) => {
 
   const goToCourseServerScreen = (course) => {
     setSelectedCourseId(course.course_id); 
-    navigate(`/courseserver/${course.course_id}`, { state: { course } });
+    navigate(`/courseserver/${course.course_id}`, { state: { course, role: student.role,userId: student.user_id }  });
   };
 
  

@@ -4,7 +4,7 @@ import '../CSS/ChatList.css';
 import profile from '../assets/profile.svg';
 import minus from "../assets/minus.svg"
 
-function ChatList({ contacts, setActiveContact, onDeleteContact }) {
+function ChatList({ contacts, setActiveContact, onDeleteContact,userId }) {
     return (
         <div className="chat-list">
             <h2>DMs</h2>

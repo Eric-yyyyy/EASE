@@ -5,7 +5,7 @@ import AddButton from "../assets/plus.svg"
 
 
 
-function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
+function ChannelList({ onChannelSelect, courseId ,onChannelDeletion,role  }) {
   const CHANNELS_STORAGE_KEY = `myApp_${courseId}_channels`;
   console.log(CHANNELS_STORAGE_KEY)
   
@@ -31,8 +31,14 @@ function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
   
 
   const handleAddChannel = () => {
-    const newChannel = { id: Date.now(), name: 'new channel' };
-    setChannels([...channels, newChannel]);
+    console.log(role);
+    if(role === "instructor"){
+      const newChannel = { id: Date.now(), name: 'new channel' };
+      setChannels([...channels, newChannel]);
+    }else{
+      alert("You do not have the permission to add channels");
+    }
+    
   };
 
   const handleChannelNameChange = (event, channelId) => {
@@ -57,11 +63,16 @@ function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
   };
 
   const handleDeleteChannel = (channelId) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
-    if(confirmDelete){
-      setChannels(channels.filter(channel => channel.id !== channelId));
-      onChannelDeletion(channelId);
+    if(role === "instructor"){
+      const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
+      if(confirmDelete){
+        setChannels(channels.filter(channel => channel.id !== channelId));
+        onChannelDeletion(channelId);
+      }
+    }else{
+      alert("You do not have the permission to delete channels");
     }
+    
     
   };
 
@@ -84,6 +95,7 @@ function ChannelList({ onChannelSelect, courseId ,onChannelDeletion  }) {
           onDraftNameChange={handleChannelNameChange}
           onSave={() => handleSaveChannelName(channel.id)}
           onRightClick={(e) => handleRightClick(e, channel.id)}
+          role = {role}
         />
       ))}
 
