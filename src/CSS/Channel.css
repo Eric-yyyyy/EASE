@@ -1,5 +1,6 @@
 /*channel.css*/
 .channel-item .channel {
+    width: 170px;
     display: flex;
     justify-content: space-between;
     align-items: center;
