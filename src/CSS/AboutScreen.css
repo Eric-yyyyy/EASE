@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: rgb(85, 85, 85);
+}
+
+.about-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    height: 100%;
+    font-size: 24px;
+
+}

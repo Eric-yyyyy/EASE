@@ -8,6 +8,7 @@ import CalendarScreen from './components/Screens/CalendarScreen';
 import ChatScreen from './components/Screens/ChatScreen';
 import LoginPage from './components/LoginPage';
 import ChatServer from './components/ChatServer';
+import AboutScreen from './components/Screens/AboutScreen';
 import './CSS/Style.css';
 import CourseServerScreen from './components/Screens/CourseServerScreen';
 
@@ -19,6 +20,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="*" element={<MainLayout />} />
+          
         </Routes>
       </div>
     </Router>
@@ -52,6 +54,7 @@ const MainLayout = () => {
           <Route path="/chat" element={<ChatScreen />} />
           <Route path="/courseserver/:courseId" element={<CourseServerScreen />} />
           <Route path="/courseserver/:courseId/:channelId" element={<ChatServer />} />
+          <Route path = "/About" element = {<AboutScreen/>}/>
         </Routes>
       </main>
     </>
