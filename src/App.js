@@ -9,25 +9,31 @@ import ChatScreen from './components/Screens/ChatScreen';
 import LoginPage from './components/LoginPage';
 import ChatServer from './components/ChatServer';
 import AboutScreen from './components/Screens/AboutScreen';
+import Notification from './components/Notification';
+import { NotificationProvider } from './components/Notificationcontext';
+import useEventNotifier from './components/useEventNotifier';
 import './CSS/Style.css';
 import CourseServerScreen from './components/Screens/CourseServerScreen';
 
 const App = () => {
 
   return (
-    <Router>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="*" element={<MainLayout />} />
-          
-        </Routes>
-      </div>
-    </Router>
+    <NotificationProvider>
+      <Router>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="*" element={<MainLayout />} />
+            
+          </Routes>
+        </div>
+      </Router>
+    </NotificationProvider>
   );
 };
 
 const MainLayout = () => {
+  useEventNotifier();
   const location = useLocation();
 
   if (location.pathname === '/login') {
@@ -50,11 +56,12 @@ const MainLayout = () => {
         <Routes>
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/course" element={<CourseScreen />} />
-          <Route path="/calendar" element={<CalendarScreen />} />
+          <Route path="/calendar/:userId" element={<CalendarScreen />} />
           <Route path="/chat" element={<ChatScreen />} />
           <Route path="/courseserver/:courseId" element={<CourseServerScreen />} />
           <Route path="/courseserver/:courseId/:channelId" element={<ChatServer />} />
           <Route path = "/About" element = {<AboutScreen/>}/>
+          <Route path = "/Notification" element = {<Notification/>}/>
         </Routes>
       </main>
     </>

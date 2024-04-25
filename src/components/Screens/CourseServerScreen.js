@@ -40,6 +40,7 @@ function CourseServerScreen() {
     };
 
     const handleChannelDeletion = (channelId) => {
+        
         if (selectedChannel && channelId === selectedChannel.id) {
             setSelectedChannel(null);
         }
@@ -52,7 +53,14 @@ function CourseServerScreen() {
     };
 
     const handleDeleteContact = (contactId) => {
-        setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId));
+        const confirmDelete = window.confirm("Are you sure you want to delete this channel?");
+        if(confirmDelete){
+            if (activeContact && contactId === activeContact.id) {
+                setActiveContact(null);  
+            }
+            setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId));
+        }
+       
     };
 
     // Save contacts to local storage whenever they change
