@@ -102,8 +102,31 @@
 }
 
 .event-icon-container {
-  position: absolute;
-  margin-left: 60px;
-  margin-bottom: -30px;
-
+  display: flex; /* Using flexbox to manage layout */
+  flex-wrap: wrap; /* Allows icons to wrap to next line if space runs out */
+  justify-content: start; /* Aligns items to the start of the container */
+  align-items: center; /* Vertically center the items */
+  max-height: 50px; /* Limit the height of the container */
+  overflow: hidden; /* Hides additional items that overflow */
+  position: absolute; /* Keeps the position relative to the day tile */
+  left: 5px; /* Spacing from the left */
+  bottom: 5px; /* Spacing from the bottom */
 }
+
+.event-icon {
+  width: 20px; /* Smaller icons */
+  height: 20px; /* Smaller icons */
+  margin-right: 2px; /* Space between icons */
+}
+
+.react-calendar__month-view__days__day {
+  position: relative; /* Needed to position the icons absolutely within the day */
+}
+
+/* Hover effect for more details */
+.event-icon:hover {
+  position: relative;
+  z-index: 10;
+  transform: scale(1.5); /* Enlarges icon on hover */
+}
+
