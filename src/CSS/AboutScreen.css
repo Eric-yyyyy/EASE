@@ -5,11 +5,13 @@
 }
 
 .about-screen {
-    display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'DM Sans', sans-serif;
     height: 100%;
     font-size: 24px;
+}
 
+.team-header {
+    margin-top: 50px;
 }
