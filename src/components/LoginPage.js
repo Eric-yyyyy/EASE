@@ -38,7 +38,7 @@ const LoginPage = () => {
       <div className="logout-container">
         <div><h1>You are logged in.</h1></div>
         <button onClick={handleLogout}>Logout</button>
-        <button onClick={handleBack}>Back</button>
+        <button onClick={handleBack}>Continue to Account</button>
       </div>
     );
   }

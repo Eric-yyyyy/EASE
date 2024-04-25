@@ -1,17 +1,65 @@
-* {
+html, body {
+    height: 100%;
     margin: 0;
-    font-family: 'DM Sans', sans-serif;
-    color: rgb(85, 85, 85);
 }
 
 .about-screen {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-family: 'DM Sans', sans-serif;
-    height: 100%;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 80vh;
+    max-height: 80vh;
+    width: 100%;;
+    overflow-x: auto;
+    overflow-y: auto;
     font-size: 24px;
+    scrollbar-width: none;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.image-row img {
+    width: 200px;
+    height: auto;
 }
 
 .team-header {
     margin-top: 50px;
+}
+
+.ease-logo {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/* .profile pb {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+    color: aqua;
+} */
+
+.profile p {
+    margin: auto;
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+    color: cornflowerblue;
+    /* text-align: center; */
+}
+
+.profile .bold {
+    font-weight: bold;
+}
+
+.profile .role {
+    font-size: 16px;
+    font-weight: light;
+    color: gray;
 }
