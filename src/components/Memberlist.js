@@ -27,7 +27,7 @@ const MemberList = ({ courseId,onUserClick  }) => {
     <div className="member-list">
       <h3 className='member-heading'>Members</h3>
       <h3>Instructors</h3>
-      <div class="member-contact">
+      <div className="member-contact">
         <img src={profile} alt="profile" width='40px'></img>
         <div onClick={() => onUserClick(members.instructor)} className="member-name clickable">
           {members.instructor.name}
@@ -37,7 +37,7 @@ const MemberList = ({ courseId,onUserClick  }) => {
       <h3>Teaching Assistants</h3>
     
       {members.TAs.map((ta, index) => (
-        <div class="member-contact">
+        <div className="member-contact">
           <img src={profile} alt="profile" width='40px'></img>
           <div key={index} onClick={() => onUserClick(ta)} className="member-name clickable">
             {ta.name}
@@ -47,7 +47,7 @@ const MemberList = ({ courseId,onUserClick  }) => {
 
       <h3>Students</h3>
       {members.students.map((student, index) => (
-        <div class="member-contact">
+        <div className="member-contact">
           <img src={profile} alt="profile" width='40px'></img>
           <div key={index} onClick={() => onUserClick(student)} className="member-name clickable">
             {student.name}

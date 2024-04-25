@@ -56,6 +56,7 @@ function CalendarScreen() {
       default:
         return null;
     }
+    //return <img src={homeworkIcon} alt="Homework" className="event-icon" />;
   };
 
   return (
