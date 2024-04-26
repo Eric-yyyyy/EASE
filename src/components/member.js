@@ -4,7 +4,7 @@ const memberData = {
       "courseTitle": "Human Computer Interaction",
       "instructor": {
         "name": "Yukang Yan",
-        "id": "27",
+        "id": "yyan",
         "email": "yukang.yan@rochester.edu"
       },
       "TAs": [
@@ -28,9 +28,9 @@ const memberData = {
         { "name": "Carson Commins" ,"id": '6'},
         { "name": "Joe Dapello" ,"id": '7'},
         { "name": "Frankie DiGiorgio" ,"id": '8'},
-        { "name": "Sara Jeiter-Johnson" ,"id": '9'},
-        { "name": "Emily Jeong" ,"id": '10'},
-        { "name": "Alvin Jiang" ,"id": '11'},
+        { "name": "Sara Jeiter-Johnson" ,"id": 'sjeiterj'},
+        { "name": "Emily Jeong" ,"id": 'ejeong4'},
+        { "name": "Alvin Jiang" ,"id": 'yjiang54'},
         { "name": "Alan Jimenez" ,"id": '12'},
         { "name": "Joshua Jones" ,"id": '13'},
         { "name": "Pai Liu" ,"id": '14'},
@@ -44,7 +44,7 @@ const memberData = {
         { "name": "Jacob Schoenfeld" ,"id": '22'},
         { "name": "Keer Song" ,"id": '23'},
         { "name": "Jiamu Tang" ,"id": '24'},
-        { "name": "Eric Yang" ,"id": '1'},
+        { "name": "Eric Yang" ,"id": 'jyang118'},
         { "name": "Andy Yu" ,"id": '25'},
         { "name": "Jenny Zheng","id": '26' }
         

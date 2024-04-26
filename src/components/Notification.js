@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "../CSS/Notification.css"
+import "../CSS/Notification.css";
 
 function Notification() {
   const [notifications, setNotifications] = useState([]);
@@ -7,11 +7,15 @@ function Notification() {
   useEffect(() => {
     const userId = JSON.parse(localStorage.getItem('user'))?.user_id;
     const events = JSON.parse(localStorage.getItem(`events_${userId}`)) || {};
-    const notificationsArray = Object.keys(events).map(date => {
-      return {
-        date,
-        ...events[date]
-      };
+    console.log(events);
+    const notificationsArray = [];
+    Object.keys(events).forEach(date => {
+      events[date].forEach(event => {
+        notificationsArray.push({
+          date,
+          ...event
+        });
+      });
     });
     notificationsArray.sort((a, b) => new Date(a.date) - new Date(b.date));
     setNotifications(notificationsArray);

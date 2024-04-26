@@ -8,12 +8,18 @@ export const NotificationProvider = ({ children }) => {
   useEffect(() => {
     const userId = JSON.parse(localStorage.getItem('user'))?.user_id;
     const storedEvents = JSON.parse(localStorage.getItem(`events_${userId}`)) || {};
-    console.log(userId);
-    console.log(storedEvents);
-    const eventsArray = Object.entries(storedEvents).map(([date, eventDetails]) => ({
-      date,
-      ...eventDetails
-    }));
+    const eventsArray = Object.entries(storedEvents).flatMap(([date, eventList]) => {
+
+      if (Array.isArray(eventList)) {
+        return eventList.map(event => ({
+          date,
+          ...event
+        }));
+      } else {
+        console.warn(`Expected an array for events on ${date}, received:`, eventList);
+        return [];
+      }
+    });
     setEvents(eventsArray);
   }, []);
 

@@ -6,41 +6,63 @@ import sendIcon from '../assets/send.svg';
 function ChatServer({ contact }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const loggedInUser = JSON.parse(localStorage.getItem('user')); // Get the logged-in user
+  const [chatKey, setChatKey] = useState(""); 
+  const loggedInUser = JSON.parse(localStorage.getItem('user')); 
 
   useEffect(() => {
     if (contact) {
-      // Use the loggedInUser ID and contact ID to create a unique key for fetching messages
-      const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
-      const storedMessages = localStorage.getItem(chatKey);
+      const key1 = `messages_${contact.id}_${loggedInUser.user_id}`;
+      const key2 = `messages_${loggedInUser.user_id}_${contact.id}`;
+      let storedMessages = localStorage.getItem(key1);
       if (storedMessages) {
         setMessages(JSON.parse(storedMessages));
+        setChatKey(key1);
       } else {
-        setMessages([]);
+        storedMessages = localStorage.getItem(key2);
+        if (storedMessages) {
+          setMessages(JSON.parse(storedMessages));
+          setChatKey(key2);
+        } else {
+          setMessages([]);
+          setChatKey(key1); 
+        }
       }
     }
-  }, [contact]);
+  }, [contact, loggedInUser.user_id]);
 
   const handleSend = () => {
     if (newMessage.trim()) {
-      const updatedMessages = [...messages, { text: newMessage, sender: 'user', timestamp: new Date().toISOString() }];
+      const updatedMessages = [...messages, {
+        text: newMessage,
+        senderId: loggedInUser.user_id, 
+        sender: 'user',
+        timestamp: new Date().toISOString()
+      }];
       setMessages(updatedMessages);
-      const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
       localStorage.setItem(chatKey, JSON.stringify(updatedMessages));
       setNewMessage("");
+      if(contact.id === "yyan" || contact.id === "jyang118" || contact.id === "ejeong4" || contact.id === "yjiang54" || contact.id === "sjeiterj"){
+    
+      }else{
+        setTimeout(() => {
+          const reply = {
+            text: "Thanks for your message!",
+            senderId: 'system', // Assuming system replies, adjust as needed
+            sender: 'them',
+            timestamp: new Date().toISOString()
+          };
+          const updatedMessagesWithReply = [...updatedMessages, reply];
+          setMessages(updatedMessagesWithReply);
+          localStorage.setItem(chatKey, JSON.stringify(updatedMessagesWithReply));
+        }, 1000);
+      }
 
-      setTimeout(() => {
-        const reply = { text: "Thanks for your message!", sender: 'them', timestamp: new Date().toISOString() };
-        const updatedMessagesWithReply = [...updatedMessages, reply];
-        setMessages(updatedMessagesWithReply);
-        localStorage.setItem(chatKey, JSON.stringify(updatedMessagesWithReply));
-      }, 1000);
+
     }
   };
 
   const clearHistory = () => {
     if (contact) {
-      const chatKey = `messages_${loggedInUser.user_id}_${contact.id}`;
       localStorage.removeItem(chatKey);
       setMessages([]);
     }
@@ -54,21 +76,24 @@ function ChatServer({ contact }) {
     <div className="chat-server">
       <h2>Chat with {contact.name}</h2>
       <div className="message-history">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender}`}>
-            <div className="message-bubble">
-            <div class="message-header">
-                <div class="message-profile">
-                  <img src={profile} alt='profile' className='message-profile-img'></img>
-                  <span className='message-sender'>{message.sender === 'user' ? loggedInUser.user_id : contact.name}</span>
-                </div>
-                <span className="message-time">{new Date(message.timestamp).toLocaleTimeString()}</span>
-              </div>
-              <span className='message-text'>{message.text}</span>
-            </div>
+  {messages.map((message, index) => (
+    <div key={index} className={`message ${message.senderId === loggedInUser.user_id ? 'current-user' : 'previous-user'}`}>
+      <div className="message-bubble">
+        <div className="message-header">
+          <div className="message-profile">
+            <img src={profile} alt='profile' className='message-profile-img'></img>
+            <span className='message-sender'>
+              {message.senderId === loggedInUser.user_id ? loggedInUser.name : contact.name}
+            </span>
           </div>
-        ))}
+          <span className="message-time">{new Date(message.timestamp).toLocaleTimeString()}</span>
+        </div>
+        <span className='message-text'>{message.text}</span>
       </div>
+    </div>
+  ))}
+</div>
+
       <div className="course-message-input-area">
         <textarea
           value={newMessage}

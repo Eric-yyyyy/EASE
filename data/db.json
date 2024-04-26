@@ -1,7 +1,7 @@
 {
     "students": [
         {
-            "name": "Alvin",
+            "name": "Alvin Jiang",
             "user_id": "yjiang54",
             "role":"student",
             "password": "1111",
@@ -38,7 +38,7 @@
             ]
         },
         {
-            "name": "Emily",
+            "name": "Emily Jeong",
             "user_id": "ejeong4",
             "role":"student",
             "password": "1111",
@@ -83,7 +83,7 @@
             ]
         },
         {
-            "name": "Sara",
+            "name": "Sara Jo Jeiter-Johnson",
             "user_id": "sjeiterj",
             "role":"student",
             "password": "1111",
@@ -115,7 +115,7 @@
             ]
         },
         {
-            "name": "Eric",
+            "name": "Eric Yang",
             "user_id": "jyang118",
             "role":"student",
             "password": "1111",
@@ -160,7 +160,7 @@
             ]
         },
         {
-            "name": "Yukang",
+            "name": "Yukang Yan",
             "user_id": "yyan",
             "role":"instructor",
             "password": "1111",

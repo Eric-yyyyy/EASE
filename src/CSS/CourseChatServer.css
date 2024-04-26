@@ -93,9 +93,9 @@
     align-items: center;
   }
   
-  .message.user {
-    /* justify-content: flex-end; */
-  }
+  /* .message.user {
+    /* justify-content: flex-end; 
+  } */
 
   .message-profile-img {
     width: 50px;
