@@ -1,12 +1,11 @@
 // LoginPage.js
 import React, { useState } from 'react';
-import useFetch from './useFetch';
 import { useNavigate } from 'react-router-dom';
+import studentsData from './studentsData'; // Import the local data
 import '../CSS/LoginPage.css';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { data: users, isPending, error } = useFetch('http://localhost:8000/students');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [domain, setDomain] = useState('UR Active Directory');
@@ -14,7 +13,7 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const foundUser = users?.find(user => user.user_id === username && user.password === password);
+    const foundUser = studentsData.students.find(user => user.user_id === username && user.password === password);
     if (foundUser) {
       localStorage.setItem('user', JSON.stringify(foundUser));
       alert('Login successful');
@@ -30,7 +29,7 @@ const LoginPage = () => {
   };
 
   const handleBack = () => {
-    navigate('/home')
+    navigate('/home');
   };
 
   // Check if the user is already logged in
@@ -48,22 +47,33 @@ const LoginPage = () => {
     <div className="login-container">
       <form onSubmit={handleLogin} className="login-form">
         <h1>Sign in with your username and password</h1>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" required />
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
-        <select value={domain} onChange={(e) => setDomain(e.target.value)}>
-          <option value="" disabled selected>-- select a domain --</option>
+        <input 
+          type="text" 
+          value={username} 
+          onChange={(e) => setUsername(e.target.value)} 
+          placeholder="Username" 
+          required 
+        />
+        <input 
+          type="password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          placeholder="Password" 
+          required 
+        />
+        <select 
+          value={domain} 
+          onChange={(e) => setDomain(e.target.value)}
+        >
+          <option value="" disabled>-- select a domain --</option>
           <option value="UR Active Directory">UR Active Directory</option>
           <option value="URMC Active Directory">URMC Active Directory</option>
-
         </select>
         <div className="form-footer">
-          <button type="submit" disabled={isPending}>Sign in</button>
+          <button type="submit">Sign in</button>
           <a href="https://uidp-prod.its.rochester.edu/idp/contact.html" className="help-link">Need help?</a>
         </div>
-
-        {error && <div>Error: {error}</div>}
       </form>
-
     </div>
   );
 };

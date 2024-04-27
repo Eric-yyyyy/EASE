@@ -2,10 +2,11 @@
 import React from 'react';
 import CourseList from "../Courselist";
 import useFetch from "../useFetch";
+import studentsData from '../studentsData';
 
 
 const CourseScreen = () => {
-  const { error, isPending, data: students } = useFetch('http://localhost:8000/students');
+  const students = studentsData.students
   const user = JSON.parse(localStorage.getItem('user'));
 
 
@@ -13,8 +14,8 @@ const CourseScreen = () => {
 
   return (
     <div className="course-screen">
-      {error && <div>{error}</div>}
-      {isPending && <div>Loading...</div>}
+      {/* {error && <div>{error}</div>}
+      {isPending && <div>Loading...</div>} */}
       {loggedInStudent ? <CourseList student={loggedInStudent} /> : <div>No courses found for this user.</div>}
     </div>
   );
