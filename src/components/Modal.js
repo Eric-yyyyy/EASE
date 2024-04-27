@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../CSS/Modal.css';
 
 const Modal = ({ onSave, onDelete, event = {}, onClose, eventIndex }) => {
-  const [eventType, setEventType] = useState(event.eventType || '');
-  const [time, setTime] = useState(event.time || '');
-  const [description, setDescription] = useState(event.description || '');
+  const [eventType, setEventType] = useState('');
+  const [time, setTime] = useState('');
+  const [description, setDescription] = useState('');
+
+  // This effect will update the modal's state with the event details whenever the event prop changes.
+  useEffect(() => {
+    if (event) {
+      setEventType(event.eventType || '');
+      setTime(event.time || '');
+      setDescription(event.description || '');
+    }
+  }, [event]);
 
   const handleSave = () => {
     onSave(eventType, time, description, eventIndex);
