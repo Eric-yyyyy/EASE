@@ -3,50 +3,50 @@ const memberData = {
     "CSC212.1.SPRING2024ASE": {
       "courseTitle": "Human Computer Interaction",
       "instructor": {
-        "name": "Yukang Yan",
+        "name": "Y.Y.",
         "id": "yyan",
-        "email": "yukang.yan@rochester.edu"
+        "email": "yy@r.edu"
       },
       "TAs": [
         {
-          "name": "Tariq Adnan",
+          "name": "T.A.",
           "id": '28',
-          "email": "tadnan@ur.rochester.edu"
+          "email": "ta@r.edu"
         },
         {
-          "name": "Yufei Li",
+          "name": "Y.L.",
           "id": '29',
-          "email": "" // If there's an email, add it here
+          "email": "yl@r.edu"
         }
       ],
       "students": [
-        { "name": "Akber Ahmed","id": '1' },
-        { "name": "Jingjing Chen" ,"id": '2'},
-        { "name": "Mandy Cheng" ,"id": '3'},
-        { "name": "Richard Chuong" ,"id":'4'},
-        { "name": "David Costello" ,"id": '5'},
-        { "name": "Carson Commins" ,"id": '6'},
-        { "name": "Joe Dapello" ,"id": '7'},
-        { "name": "Frankie DiGiorgio" ,"id": '8'},
+        { "name": "A.A.","id": '1' },
+        { "name": "J.C." ,"id": '2'},
+        { "name": "M.C." ,"id": '3'},
+        { "name": "R.C." ,"id":'4'},
+        { "name": "D.C." ,"id": '5'},
+        { "name": "C.C." ,"id": '6'},
+        { "name": "J.D." ,"id": '7'},
+        { "name": "F.D." ,"id": '8'},
         { "name": "Sara Jeiter-Johnson" ,"id": 'sjeiterj'},
         { "name": "Emily Jeong" ,"id": 'ejeong4'},
         { "name": "Alvin Jiang" ,"id": 'yjiang54'},
-        { "name": "Alan Jimenez" ,"id": '12'},
-        { "name": "Joshua Jones" ,"id": '13'},
-        { "name": "Pai Liu" ,"id": '14'},
-        { "name": "Raye Liu" ,"id": '15'},
-        { "name": "Yuhao Lu" ,"id": '16'},
-        { "name": "Julia McQuiston" ,"id": '17'},
-        { "name": "Tochi Onwuasoanya" ,"id": '18'},
-        { "name": "Neeley Pate" ,"id": '19'},
-        { "name": "Mila Paymukhina" ,"id": '20'},
-        { "name": "Liam Ryan" ,"id": '21'},
-        { "name": "Jacob Schoenfeld" ,"id": '22'},
-        { "name": "Keer Song" ,"id": '23'},
-        { "name": "Jiamu Tang" ,"id": '24'},
+        { "name": "A.J." ,"id": '12'},
+        { "name": "J.J." ,"id": '13'},
+        { "name": "P.L." ,"id": '14'},
+        { "name": "R.L." ,"id": '15'},
+        { "name": "Y.L." ,"id": '16'},
+        { "name": "J.M." ,"id": '17'},
+        { "name": "T.O." ,"id": '18'},
+        { "name": "N.P." ,"id": '19'},
+        { "name": "M.P." ,"id": '20'},
+        { "name": "L.R." ,"id": '21'},
+        { "name": "J.S." ,"id": '22'},
+        { "name": "K.S." ,"id": '23'},
+        { "name": "J.T." ,"id": '24'},
         { "name": "Eric Yang" ,"id": 'jyang118'},
-        { "name": "Andy Yu" ,"id": '25'},
-        { "name": "Jenny Zheng","id": '26' }
+        { "name": "A.Y." ,"id": '25'},
+        { "name": "J.Z.","id": '26' }
         
       ]
     }

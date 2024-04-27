@@ -36,7 +36,7 @@ const LoginPage = () => {
   if (localStorage.getItem('user')) {
     return (
       <div className="logout-container">
-        <div><h1>You are logged in.</h1></div>
+        <div><h1>You are logged in as {username}.</h1></div>
         <button onClick={handleLogout}>Logout</button>
         <button onClick={handleBack}>Continue to Account</button>
       </div>

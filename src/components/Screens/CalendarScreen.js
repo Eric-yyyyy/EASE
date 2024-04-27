@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import Modal from '../Modal';
 import '../../CSS/Calendarscreen.css';
-import homeworkIcon from '../../assets/plus.svg';
-import meetingIcon from '../../assets/minus.svg';
+// import homeworkIcon from '../../assets/plus.svg';
+// import meetingIcon from '../../assets/minus.svg';
 
 function CalendarScreen() {
   const { userId } = useParams();
@@ -73,13 +73,23 @@ function CalendarScreen() {
   };
 
   const getEventIcon = (eventType) => {
-    switch (eventType.toLowerCase()) {
-      case 'homework':
-        return <img src={homeworkIcon} alt="Homework" className="event-icon" />;
-      case 'meeting':
-        return <img src={meetingIcon} alt="Meeting" className="event-icon" />;
-      default:
-        return null;
+    const baseStyle = "event-icon";
+    // switch (eventType.toLowerCase()) {
+    //   case 'homework':
+    //     return <div className={baseStyle + " homework"} />;
+    //   case 'meeting':
+    //     return <div className={baseStyle + " meeting"} />;
+    //   default:
+    //     return <div className={baseStyle + " other"} />;;
+    // }
+    if(eventType.toLowerCase().includes('homework')) {
+      return <div className={baseStyle + " homework"} />;
+    }
+    else if (eventType.toLowerCase().includes('meeting')) {
+      return <div className={baseStyle + " meeting"} />;
+    }
+    else {
+      return <div className={baseStyle + " other"} />;
     }
   };
 
@@ -95,7 +105,7 @@ function CalendarScreen() {
             return events[dateKey] ? (
               <div className="event-icon-container">
                 {events[dateKey].map((event, index) => (
-                  <div key={index} onClick={() => onDateClick(date, index)}>
+                  <div key={index} className="event-block" onClick={() => onDateClick(date, index)}>
                     {getEventIcon(event.eventType)}
                   </div>
                 ))}
