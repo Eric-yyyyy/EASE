@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue, push, remove, serverTimestamp } from 'firebase/database';
+import { getDatabase, ref, onValue, push, remove, serverTimestamp,off } from 'firebase/database';
 import '../CSS/ChatServer.css';
 import profile from '../assets/profile.svg';
 import sendIcon from '../assets/send.svg';
@@ -27,35 +27,68 @@ const analytics = getAnalytics(app);
 function ChatServer({ contact }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
-  const loggedInUser = JSON.parse(localStorage.getItem('user'));
+  const loggedInUser = JSON.parse(localStorage.getItem('user')) || {};
+
+  const getMessagesPath = (user1, user2) => {
+    return `messages/${user1}_${user2}`;
+  };
 
   useEffect(() => {
-    if (contact) {
-      const messagesRef = ref(database, `messages/${loggedInUser.user_id}_${contact.id}`);
-      return onValue(messagesRef, snapshot => {
-        const fetchedMessages = snapshot.val() ? Object.values(snapshot.val()) : [];
-        setMessages(fetchedMessages);
-      });
+    if (contact && loggedInUser.user_id) {
+      // Establish refs for both possible message directions
+      const messagesRef1 = ref(database, getMessagesPath(loggedInUser.user_id, contact.id));
+      const messagesRef2 = ref(database, getMessagesPath(contact.id, loggedInUser.user_id));
+
+      // Function to handle new messages
+      const onMessage = (snapshot) => {
+        const message = snapshot.val();
+        if (message) {
+          setMessages((prevMessages) => {
+            // Deduplicate and sort messages
+            const allMessages = [...prevMessages, ...Object.values(message)];
+            const messageMap = new Map(allMessages.map(msg => [msg.timestamp, msg]));
+            return Array.from(messageMap.values()).sort((a, b) => a.timestamp - b.timestamp);
+          });
+        }
+      };
+
+      // Start listening for messages
+      onValue(messagesRef1, onMessage);
+      onValue(messagesRef2, onMessage);
+
+      // Stop listening to the refs when component unmounts or contact changes
+      return () => {
+        off(messagesRef1, 'value', onMessage);
+        off(messagesRef2, 'value', onMessage);
+      };
     }
   }, [contact, loggedInUser.user_id]);
 
   const handleSend = () => {
     if (newMessage.trim()) {
-      const messagesRef = ref(database, `messages/${loggedInUser.user_id}_${contact.id}`);
       const newMessageObj = {
         text: newMessage,
         senderId: loggedInUser.user_id,
         sender: 'user',
         timestamp: serverTimestamp()
       };
-      push(messagesRef, newMessageObj);
-      setNewMessage("");
+      const messagePath = getMessagesPath(loggedInUser.user_id, contact.id);
+      const newMessageRef = ref(database, messagePath);
+
+      push(newMessageRef, newMessageObj).then(() => {
+        setNewMessage("");
+      }).catch((error) => {
+        console.error("Error sending message:", error);
+      });
     }
   };
 
   const clearHistory = () => {
-    const messagesRef = ref(database, `messages/${loggedInUser.user_id}_${contact.id}`);
-    remove(messagesRef);
+    const messagesRef1 = ref(database, getMessagesPath(loggedInUser.user_id, contact.id));
+    const messagesRef2 = ref(database, getMessagesPath(contact.id, loggedInUser.user_id));
+
+    remove(messagesRef1);
+    remove(messagesRef2);
   };
 
   if (!contact) {
@@ -83,7 +116,6 @@ function ChatServer({ contact }) {
           </div>
         ))}
       </div>
-
       <div className="course-message-input-area">
         <textarea
           value={newMessage}
