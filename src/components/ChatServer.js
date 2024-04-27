@@ -30,8 +30,10 @@ function ChatServer({ contact }) {
   const loggedInUser = JSON.parse(localStorage.getItem('user')) || {};
 
   const getMessagesPath = (user1, user2) => {
-    return `messages/${user1}_${user2}`;
+    const sortedUsers = [user1, user2].sort();
+    return `messages/${sortedUsers[0]}_${sortedUsers[1]}`;
   };
+  
 
   useEffect(() => {
     if (contact && loggedInUser.user_id) {
