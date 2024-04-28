@@ -37,28 +37,40 @@ function ChatServer({ contact }) {
 
   useEffect(() => {
     if (contact && loggedInUser.user_id) {
-      // Establish refs for both possible message directions
       const messagesRef1 = ref(database, getMessagesPath(loggedInUser.user_id, contact.id));
       const messagesRef2 = ref(database, getMessagesPath(contact.id, loggedInUser.user_id));
 
-      // Function to handle new messages
       const onMessage = (snapshot) => {
         const message = snapshot.val();
         if (message) {
           setMessages((prevMessages) => {
-            // Deduplicate and sort messages
-            const allMessages = [...prevMessages, ...Object.values(message)];
-            const messageMap = new Map(allMessages.map(msg => [msg.timestamp, msg]));
-            return Array.from(messageMap.values()).sort((a, b) => a.timestamp - b.timestamp);
+            const incomingMessages = Object.values(message).flat();
+            const combinedMessages = [...prevMessages, ...incomingMessages];
+            
+ 
+            const timestampDifferenceThreshold = 100; 
+            const messageMap = new Map();
+      
+            for (const msg of combinedMessages) {
+              const key = `${msg.senderId}-${msg.text}`;
+              if (!messageMap.has(key) || Math.abs(messageMap.get(key).timestamp - msg.timestamp) > timestampDifferenceThreshold) {
+                messageMap.set(key, msg);
+              }
+            }
+            
+            const uniqueSortedMessages = Array.from(messageMap.values())
+              .sort((a, b) => a.timestamp - b.timestamp);
+      
+            return uniqueSortedMessages;
           });
         }
       };
+      
 
-      // Start listening for messages
       onValue(messagesRef1, onMessage);
       onValue(messagesRef2, onMessage);
 
-      // Stop listening to the refs when component unmounts or contact changes
+    
       return () => {
         off(messagesRef1, 'value', onMessage);
         off(messagesRef2, 'value', onMessage);
@@ -72,18 +84,21 @@ function ChatServer({ contact }) {
         text: newMessage,
         senderId: loggedInUser.user_id,
         sender: 'user',
-        timestamp: serverTimestamp()
+        timestamp: serverTimestamp() 
       };
       const messagePath = getMessagesPath(loggedInUser.user_id, contact.id);
       const newMessageRef = ref(database, messagePath);
 
-      push(newMessageRef, newMessageObj).then(() => {
-        setNewMessage("");
-      }).catch((error) => {
-        console.error("Error sending message:", error);
-      });
+      push(newMessageRef, newMessageObj)
+        .then(() => {
+          setNewMessage("");
+        })
+        .catch((error) => {
+          console.error("Error sending message:", error);
+        });
     }
   };
+  
 
   const clearHistory = () => {
     const messagesRef1 = ref(database, getMessagesPath(loggedInUser.user_id, contact.id));
