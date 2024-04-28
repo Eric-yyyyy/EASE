@@ -10,7 +10,15 @@
   height: 100vh;
   
    overflow: hidden;
+   overflow-y: auto;
+
+   scrollbar-width: none; 
+  -ms-overflow-style: none; 
   
+}
+
+.app::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
