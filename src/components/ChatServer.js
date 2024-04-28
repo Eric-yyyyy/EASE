@@ -37,6 +37,7 @@ function ChatServer({ contact }) {
 
   useEffect(() => {
     if (contact && loggedInUser.user_id) {
+      setMessages([]);
       const messagesRef1 = ref(database, getMessagesPath(loggedInUser.user_id, contact.id));
       const messagesRef2 = ref(database, getMessagesPath(contact.id, loggedInUser.user_id));
 
@@ -46,6 +47,7 @@ function ChatServer({ contact }) {
           setMessages((prevMessages) => {
             const incomingMessages = Object.values(message).flat();
             const combinedMessages = [...prevMessages, ...incomingMessages];
+            console.log(combinedMessages)
             
  
             const timestampDifferenceThreshold = 100; 
@@ -60,6 +62,7 @@ function ChatServer({ contact }) {
             
             const uniqueSortedMessages = Array.from(messageMap.values())
               .sort((a, b) => a.timestamp - b.timestamp);
+            console.log(uniqueSortedMessages)
       
             return uniqueSortedMessages;
           });
@@ -106,6 +109,8 @@ function ChatServer({ contact }) {
 
     remove(messagesRef1);
     remove(messagesRef2);
+
+    setMessages([]);
   };
 
   if (!contact) {
