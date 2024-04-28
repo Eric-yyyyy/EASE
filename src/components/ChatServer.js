@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, onValue, push, remove, serverTimestamp,off } from 'firebase/database';
 import '../CSS/ChatServer.css';
@@ -28,6 +28,15 @@ function ChatServer({ contact }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const loggedInUser = JSON.parse(localStorage.getItem('user')) || {};
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const getMessagesPath = (user1, user2) => {
     const sortedUsers = [user1, user2].sort();
@@ -137,6 +146,7 @@ function ChatServer({ contact }) {
             </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
       <div className="course-message-input-area">
         <textarea
