@@ -51,32 +51,46 @@ function ChatServer({ contact }) {
       const messagesRef2 = ref(database, getMessagesPath(contact.id, loggedInUser.user_id));
 
       const onMessage = (snapshot) => {
-        const message = snapshot.val();
-        if (message) {
+        const messageData = snapshot.val();
+        if (messageData) {
           setMessages((prevMessages) => {
-            const incomingMessages = Object.values(message).flat();
+            const incomingMessages = Object.values(messageData).flat();
             const combinedMessages = [...prevMessages, ...incomingMessages];
-            console.log(combinedMessages)
-            
- 
+      
             const timestampDifferenceThreshold = 100; 
-            const messageMap = new Map();
+            let uniqueMessages = [];
       
-            for (const msg of combinedMessages) {
-              const key = `${msg.senderId}-${msg.text}`;
-              if (!messageMap.has(key) || Math.abs(messageMap.get(key).timestamp - msg.timestamp) > timestampDifferenceThreshold) {
-                messageMap.set(key, msg);
+            combinedMessages.forEach((newMsg) => {
+              let isUnique = true;
+      
+              for (let i = 0; i < uniqueMessages.length; i++) {
+                const existingMsg = uniqueMessages[i];
+      
+                
+                if (existingMsg.senderId === newMsg.senderId && existingMsg.text === newMsg.text) {
+                  const timeDiff = Math.abs(existingMsg.timestamp - newMsg.timestamp);
+                  
+
+                  if (timeDiff < timestampDifferenceThreshold) {
+                    isUnique = false;
+                    break;
+                  }
+                }
               }
-            }
-            
-            const uniqueSortedMessages = Array.from(messageMap.values())
-              .sort((a, b) => a.timestamp - b.timestamp);
-            console.log(uniqueSortedMessages)
       
-            return uniqueSortedMessages;
+              
+              if (isUnique) {
+                uniqueMessages.push(newMsg);
+              }
+            });
+      
+            uniqueMessages.sort((a, b) => a.timestamp - b.timestamp);
+      
+            return uniqueMessages;
           });
         }
       };
+      
       
 
       onValue(messagesRef1, onMessage);
