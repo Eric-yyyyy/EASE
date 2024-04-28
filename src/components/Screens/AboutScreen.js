@@ -35,7 +35,6 @@ function AboutScreen() {
             <img src={AJ} alt="Team Member 2"/>
             <p className="bold">Alvin Jiang</p>
             <p className="role">front-end developer</p>
-            <p className="role">asset artist</p>
           </div>
           <div className="profile">
             <img src={SJ} alt="Team Member 3"/>
