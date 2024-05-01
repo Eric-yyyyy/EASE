@@ -12,8 +12,10 @@ const Navbar = () => {
   console.log(userId)
   return (
     <nav className="navbar">
-      <img height='35px' src={logo} alt='logo'></img>
+      <a href="/Home" style={{ marginLeft: '-10px' }}><img height='35px' src={logo} alt='logo'></img></a>
+      
       <div className="links">
+        <a href="/Home">Home</a>
         <a href="/notification">Notification</a>
         <a href={userId ? `/calendar/${userId}` : "/login"}>Calendar</a>
         <a href="/About">About</a>
